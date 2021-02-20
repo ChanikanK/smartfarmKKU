@@ -1,0 +1,302 @@
+[
+  {
+      "id": "FARM_KKU_001",
+      "type": "FarmKKU",
+      "fiware-service": {
+          "type": "String",
+          "value": "cottages_farm",
+          "metadata": {}
+      },
+      "fiware-servicepath": {
+          "type": "String",
+          "value": "/",
+          "metadata": {}
+      },
+      "geo": {
+          "type": "StructuredValue",
+          "value": {
+              "lon": 102.813892,
+              "lat": 16.473143
+          },
+          "metadata": {}
+      },
+      "info": {
+          "type": "StructuredValue",
+          "value": {
+              "name": "cottage farm, AG KKU",
+              "coords": {
+                  "coords": {
+                      "lon": 102.813892,
+                      "lat": 16.473143
+                  },
+                  "address": "123 ถนน มิตรภาพ ตำบล ศิลา อำเภอเมืองขอนแก่น ขอนแก่น 40002 ประเทศไทย",
+                  "location": "อำเภอเมืองขอนแก่น",
+                  "elevation": 201.879257202,
+                  "geo": {
+                      "type": "Point",
+                      "coordinates": [
+                          102.813892,
+                          16.473143
+                      ]
+                  }
+              }
+          },
+          "metadata": {}
+      },
+      "name": {
+          "type": "String",
+          "value": "cottage farm, AG KKU",
+          "metadata": {}
+      }
+  },
+  {
+      "id": "FARM_KKU_002",
+      "type": "FarmKKU",
+      "fiware-service": {
+          "type": "String",
+          "value": "container_farm",
+          "metadata": {}
+      },
+      "fiware-servicepath": {
+          "type": "String",
+          "value": "/",
+          "metadata": {}
+      },
+      "geo": {
+          "type": "StructuredValue",
+          "value": {
+              "lon": 102.812941,
+              "lat": 16.469231
+          },
+          "metadata": {}
+      },
+      "info": {
+          "type": "StructuredValue",
+          "value": {
+              "name": "container farm, AG KKU",
+              "coords": {
+                  "coords": {
+                      "lon": 102.812941,
+                      "lat": 16.469231
+                  },
+                  "address": "123 ถนน มิตรภาพ ตำบล ศิลา อำเภอเมืองขอนแก่น ขอนแก่น 40002 ประเทศไทย",
+                  "location": "อำเภอเมืองขอนแก่น",
+                  "elevation": 201.879257202,
+                  "geo": {
+                      "type": "Point",
+                      "coordinates": [
+                          102.812941,
+                          16.469231
+                      ]
+                  }
+              }
+          },
+          "metadata": {}
+      },
+      "name": {
+          "type": "String",
+          "value": "container farm, AG KKU",
+          "metadata": {}
+      }
+  },
+  {
+      "id": "FARM_KKU_003",
+      "type": "FarmKKU",
+      "fiware-service": {
+          "type": "Text",
+          "value": "chicken_cpf_farm",
+          "metadata": {}
+      },
+      "fiware-servicepath": {
+          "type": "Text",
+          "value": "/",
+          "metadata": {}
+      },
+      "geo": {
+          "type": "StructuredValue",
+          "value": {
+              "lon": 102.811595,
+              "lat": 16.456943
+          },
+          "metadata": {}
+      },
+      "info": {
+          "type": "StructuredValue",
+          "value": {
+              "name": "chicken cpf farm, AG KKU",
+              "coords": {
+                  "coords": {
+                      "lon": 102.811595,
+                      "lat": 16.456943
+                  },
+                  "address": "123 ถนน มิตรภาพ ตำบล ศิลา อำเภอเมืองขอนแก่น ขอนแก่น 40002 ประเทศไทย",
+                  "location": "อำเภอเมืองขอนแก่น",
+                  "elevation": 201.879257202,
+                  "geo": {
+                      "type": "Point",
+                      "coordinates": [
+                          102.811595,
+                          16.456943
+                      ]
+                  }
+              }
+          },
+          "metadata": {}
+      },
+      "name": {
+          "type": "String",
+          "value": "chicken cpf farm, AG KKU",
+          "metadata": {}
+      }
+  },
+  {
+    "id": "FARM_KKU_001",
+    "type": "FarmKKU",
+    "fiware-service": {
+        "type": "String",
+        "value": "cottages_farm",
+        "metadata": {}
+    },
+    "fiware-servicepath": {
+        "type": "String",
+        "value": "/",
+        "metadata": {}
+    },
+    "geo": {
+        "type": "StructuredValue",
+        "value": {
+            "lon": 102.813892,
+            "lat": 16.473143
+        },
+        "metadata": {}
+    },
+    "info": {
+        "type": "StructuredValue",
+        "value": {
+            "name": "cottage farm, AG KKU",
+            "coords": {
+                "coords": {
+                    "lon": 102.813892,
+                    "lat": 16.473143
+                },
+                "address": "123 ถนน มิตรภาพ ตำบล ศิลา อำเภอเมืองขอนแก่น ขอนแก่น 40002 ประเทศไทย",
+                "location": "อำเภอเมืองขอนแก่น",
+                "elevation": 201.879257202,
+                "geo": {
+                    "type": "Point",
+                    "coordinates": [
+                        102.813892,
+                        16.473143
+                    ]
+                }
+            }
+        },
+        "metadata": {}
+    },
+    "name": {
+        "type": "String",
+        "value": "cottage farm, AG KKU",
+        "metadata": {}
+    }
+},
+{
+    "id": "FARM_KKU_002",
+    "type": "FarmKKU",
+    "fiware-service": {
+        "type": "String",
+        "value": "container_farm",
+        "metadata": {}
+    },
+    "fiware-servicepath": {
+        "type": "String",
+        "value": "/",
+        "metadata": {}
+    },
+    "geo": {
+        "type": "StructuredValue",
+        "value": {
+            "lon": 102.812941,
+            "lat": 16.469231
+        },
+        "metadata": {}
+    },
+    "info": {
+        "type": "StructuredValue",
+        "value": {
+            "name": "container farm, AG KKU",
+            "coords": {
+                "coords": {
+                    "lon": 102.812941,
+                    "lat": 16.469231
+                },
+                "address": "123 ถนน มิตรภาพ ตำบล ศิลา อำเภอเมืองขอนแก่น ขอนแก่น 40002 ประเทศไทย",
+                "location": "อำเภอเมืองขอนแก่น",
+                "elevation": 201.879257202,
+                "geo": {
+                    "type": "Point",
+                    "coordinates": [
+                        102.812941,
+                        16.469231
+                    ]
+                }
+            }
+        },
+        "metadata": {}
+    },
+    "name": {
+        "type": "String",
+        "value": "container farm, AG KKU",
+        "metadata": {}
+    }
+},
+{
+    "id": "FARM_KKU_003",
+    "type": "FarmKKU",
+    "fiware-service": {
+        "type": "Text",
+        "value": "chicken_cpf_farm",
+        "metadata": {}
+    },
+    "fiware-servicepath": {
+        "type": "Text",
+        "value": "/",
+        "metadata": {}
+    },
+    "geo": {
+        "type": "StructuredValue",
+        "value": {
+            "lon": 102.811595,
+            "lat": 16.456943
+        },
+        "metadata": {}
+    },
+    "info": {
+        "type": "StructuredValue",
+        "value": {
+            "name": "chicken cpf farm, AG KKU",
+            "coords": {
+                "coords": {
+                    "lon": 102.811595,
+                    "lat": 16.456943
+                },
+                "address": "123 ถนน มิตรภาพ ตำบล ศิลา อำเภอเมืองขอนแก่น ขอนแก่น 40002 ประเทศไทย",
+                "location": "อำเภอเมืองขอนแก่น",
+                "elevation": 201.879257202,
+                "geo": {
+                    "type": "Point",
+                    "coordinates": [
+                        102.811595,
+                        16.456943
+                    ]
+                }
+            }
+        },
+        "metadata": {}
+    },
+    "name": {
+        "type": "String",
+        "value": "chicken cpf farm, AG KKU",
+        "metadata": {}
+    }
+}
+]

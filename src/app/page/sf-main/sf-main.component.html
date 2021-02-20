@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <!-- Header -->
+  <div class="d-flex justify-content-between pt-3 pb-2 mb-3 border-bottom">
+    <!-- <div class="col-1 d-md-none"></div> -->
+    <p class="h2 sf-blue-midnight">{{pageTitle}}</p>
+    <div class="ml-2 m-0 form-group">
+      <input type="text" class="form-control" placeholder="Search ...">
+    </div>
+  </div>
+
+  <!-- Dashboard Card row-->
+  <div class="row">
+    <!-- Electric Cost -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="sf-gray-manatee text-uppercase mb-1">Electric Cost</div>
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="h5 my-3 sf-blue-midnight">$215,000</div>
+              <div class="d-flex flex-wrap mb-0 text-xs no-gutters">
+                <div class="text-danger mr-2">2.3% ^</div>
+                <div class="sf-gray-manatee">than last year</div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <span class="fa-stack fa-2x sf-brown-blackbean">
+                <i class="fa fa-circle fa-stack-2x" style="opacity: 0.2"></i>
+                <i class="fa fa-bolt fa-stack-1x"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Water Cost -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="sf-gray-manatee text-uppercase mb-1">Water Cost</div>
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="h5 my-3 sf-blue-midnight">$215,000</div>
+              <div class="d-flex flex-wrap mb-0 text-xs no-gutters">
+                <div class="text-danger mr-2">2.3% ^</div>
+                <div class="sf-gray-manatee">than last year</div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <span class="fa-stack fa-2x sf-green-tepapa">
+                <i class="fa fa-circle fa-stack-2x" style="opacity: 0.2"></i>
+                <i class="fa fa-tint fa-stack-1x"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Row -->
+  <div class="d-inline-flex flex-wrap m-2" style="border-radius: .25rem; background-color: #e4e4e4;">
+    <!-- Farm Card -->
+    <div class="p-0" *ngFor="let farm of farms let i = index">
+      <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/station"
+        [queryParams]="{id: farm.name.value}">
+        <div class="card farm-card text-white m-2">
+          <img class="card-img-top" src="http://placehold.it/800x600/999999/fff" style="max-height: 7rem;"
+            alt="Card image cap">
+          <div class="card-body p-2" [style.background-color]=color[i%5]>
+            <p class="card-text">{{farm.name.value}}
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <app-search-farm></app-search-farm>
+</div>

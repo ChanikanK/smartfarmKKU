@@ -1,0 +1,92 @@
+body {
+  background-color: #FCFCFC;
+}
+
+.sidebar {
+  /* position: fixed; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  background-color: #265444;
+}
+
+.sidebar a {
+  color: white;
+}
+
+.sidebar a.active {
+  color: #D8B238;
+}
+
+.sidebar a i{
+  width: 25px;
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+      top: 5rem;
+  }
+}
+
+.position-sticky {
+  position: relative;
+  top: 0;
+  /* height: calc(100vh - 48px); */
+  height: 100vh;
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+}
+
+/* SmartFarm color palette */
+.sf-brown-blackbean {
+  color: #3a0504;
+}
+
+.sf-orange-cinnabar {
+  color: #e84824;
+}
+
+.sf-orange-mandarian {
+  color: #912110;
+}
+
+
+.sf-green-tepapa {
+  color: #265444;
+}
+
+.sf-green-tepapa-bg {
+  background-color: #265444;
+}
+
+.sf-green-salem {
+  color: #1c7855;
+}
+
+.sf-gold-metallic {
+  color: #D8B238;
+}
+
+.sf-blue-midnight {
+  color: #11193C;
+}
+
+.sf-gray-manatee {
+  color: #8990AD;
+}
+
+.sf-gray-manatee-bg {
+  background-color: #8990AD;
+}
+
+/* font size */
+.text-xs {
+  font-size: .7rem;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
