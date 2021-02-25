@@ -3,20 +3,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  dataset: string = './assets/data/data1.json';
   currentLocation = {
     latitude: -11.2135,
-    longitude: 17.8770
+    longitude: 17.877,
   };
+  constructor() {}
 
-  datapath = "./assets/data/data1.json";
-
+  ngOnInit() {}
 }

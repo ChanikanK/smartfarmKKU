@@ -9,8 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./bar-chart.component.scss'],
 })
 export class BarChartComponent implements OnInit {
-  constructor(private httpService: HttpClient) {}
-
+  @Input() dataset = '';
   barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
@@ -34,7 +33,7 @@ export class BarChartComponent implements OnInit {
     },
   ];
 
-  @Input() dataset = '';
+  constructor(private httpService: HttpClient) {}
 
   ngOnInit() {
     this.barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011'];

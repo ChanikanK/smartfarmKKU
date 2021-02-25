@@ -8,7 +8,7 @@ import { FarmModel } from '../models/farm-model';
   providedIn: 'root',
 })
 export class MarkerService {
-  farmStation: string = '/assets/data/smartfarm.json';
+  farmStation: string = 'https://apiweedsmf.kku.ac.th/v2/entities';
   // farmStation: string = 'https://fiwareorion.kku.ac.th/v2/entities?type=SensorWifi';
   // farmStationUrl: string = 'https://domain/v2/entities?type=FarmKKU';
 
@@ -17,9 +17,8 @@ export class MarkerService {
   //   return this.http.get<FarmModel[]>(this.farmStation)
   //   ;
   // }
-  getFarms(): Observable<FarmModel[]>{
-    return this.http.get<FarmModel[]>(this.farmStation)
-    ;
+  getFarms(): Observable<FarmModel[]> {
+    return this.http.get<FarmModel[]>(this.farmStation);
   }
 
   // getFarm(id:number|string): Observable<FarmModel[]>{
@@ -31,4 +30,3 @@ export class MarkerService {
   //   ;
   // }
 }
-

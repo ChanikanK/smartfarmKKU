@@ -1,5 +1,11 @@
 import { FarmModel } from './../../../models/farm-model';
-import { Component, AfterViewInit, Input } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  Input,
+  OnInit,
+  ChangeDetectorRef,
+} from '@angular/core';
 import * as L from 'leaflet';
 import { icon, Marker } from 'leaflet';
 import { MarkerService } from 'src/app/services/marker.service';
@@ -24,7 +30,7 @@ L.Marker.prototype.options.icon = iconDefault;
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
 })
-export class MapComponent implements AfterViewInit {
+export class MapComponent implements AfterViewInit, OnInit {
   @Input() coordinate = {
     // KKU Coordinate
     latitude: 16.4616037,
@@ -46,7 +52,7 @@ export class MapComponent implements AfterViewInit {
   private map: any;
   private farms!: FarmModel;
   private initMap(): void {
-    this.map = L.map('map-dashboard', {
+    this.map = L.map('map-home', {
       layers: [this.streetMaps],
       center: [this.coordinate.latitude, this.coordinate.longitude],
       zoom: this.zoom,
@@ -54,8 +60,7 @@ export class MapComponent implements AfterViewInit {
   }
 
   constructor(private markerService: MarkerService) {}
-
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this.initMap();
     this.markerService.getFarms().subscribe((res: FarmModel[]) => {
       console.log(
@@ -71,7 +76,9 @@ export class MapComponent implements AfterViewInit {
         }
       }
     });
+  }
 
+  ngAfterViewInit(): void {
     // this.markerService.getFarms()
     // .subscribe((res: any) => {
     //   this.farms = res;
@@ -83,6 +90,6 @@ export class MapComponent implements AfterViewInit {
     //  if (this.subscription) {
     //   this.subscription.unsubscribe();
     // }
-    //  this.map.remove();
+    // this.map.remove();
   }
 }

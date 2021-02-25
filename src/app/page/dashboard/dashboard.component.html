@@ -83,7 +83,7 @@
         <div class="card-body">
           <h6 class="m-0 sf-blue-midnight">Utility reports</h6>
           <div class="">
-            <app-bar-chart [dataset] = 'datapath'></app-bar-chart>
+            <app-bar-chart [dataset]="dataset"></app-bar-chart>
           </div>
         </div>
       </div>
@@ -94,7 +94,7 @@
       <div class="card shadow mb-4">
         <div class="map-container">
           <div class="map-frame">
-            <app-map [zoom] = 13></app-map>
+            <app-map [zoom]="13"></app-map>
             <!-- <app-map [coordinate] = "currentLocation"></app-map> -->
           </div>
         </div>

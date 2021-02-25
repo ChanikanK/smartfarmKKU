@@ -6,14 +6,12 @@ import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { HomeComponent } from './page/home/home.component';
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: '', component: HomeComponent },
-  { path: 'main', component: SfMainComponent },
-  { path: 'station', component: SfStationComponent },
   {
     path: 'pages',
     loadChildren: () => import('./page/page.module').then((m) => m.PageModule),
   },
+  { path: '', redirectTo: 'pages', pathMatch: 'full' },
+  { path: '**', redirectTo: 'pages' },
 ];
 
 @NgModule({
