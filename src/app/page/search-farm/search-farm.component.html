@@ -1,8 +1,5 @@
-<input class="form-control" id="myInput" type="text" placeholder="Search..">
+<input class="form-control" [(ngModel)]="textSearch" type="text" placeholder="Search.." (change)="changeSearchFarm()">
 <br>
-<ul class="list-group" id="myList">
-  <li class="list-group-item">First item</li>
-  <li class="list-group-item">Second item</li>
-  <li class="list-group-item">Third item</li>
-  <li class="list-group-item">Fourth</li>
+<ul class="list-group" >
+  <li class="list-group-item" *ngFor="let farm of farms">{{farm.id}}</li>
 </ul>

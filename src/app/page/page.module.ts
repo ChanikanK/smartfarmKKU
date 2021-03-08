@@ -14,6 +14,7 @@ import { SfStationCardComponent } from './sf-station-card/sf-station-card.compon
 import { SearchFarmComponent } from './search-farm/search-farm.component';
 import { HomeModule } from './home/home.module';
 import { SensorComponent } from './sf-station/sensor/sensor.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SensorComponent } from './sf-station/sensor/sensor.component';
   imports: [
     CommonModule,
     PageRoutingModule,
+    FormsModule,
     DashboardModule,
     HomeModule,
     ChartsModule,

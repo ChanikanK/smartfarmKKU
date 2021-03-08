@@ -9,8 +9,10 @@ import { MarkerService } from 'src/app/services/marker.service';
   styleUrls: ['./search-farm.component.scss'],
 })
 export class SearchFarmComponent implements OnInit {
-  farms: any;
+  farms!: FarmModel[];
+  farmsOld! : FarmModel[];
   id!: string;
+  textSearch: string ='';
 
   constructor(
     private markerService: MarkerService // ,
@@ -18,36 +20,51 @@ export class SearchFarmComponent implements OnInit {
   {}
 
   ngOnInit(): void {
+    // this.markerService.getFarms().subscribe((res: FarmModel[]) => {
+    //   this.farms = res;
+    // });
     this.markerService.getFarms().subscribe((res: FarmModel[]) => {
+      //debugger;
       this.farms = res;
+      this.farmsOld = res;
+      // for (let i = 0; i < this.farms.length; i++) {
+      //   if (this.farms[i].name) {
+      //    // this.firstIndex = i;
+      //     break;
+      //   }
+      // }
     });
 
-    $(document).ready(function () {
-      $('#myInput').on('keyup', function () {
-        let value: string = <string>$(this).val();
-        let lower = value.toLowerCase();
-        console.log(
-          '🚀 ~ file: search-farm.component.ts ~ line 29 ~ SearchFarmComponent ~ $ ~ val',
-          lower
-        );
-        function isSame(element: string, index: any, array: any) {
-          return element;
-        }
-        // let li = $('#myList li');
-        // li.filter(()=>{
-        //   return $(this).toggle($(this).text().toLowerCase().indexOf(lower) > -1)
-        // });
+    // $(document).ready(function () {
+    //   $('#myInput').on('keyup', function () {
+    //     let value: string = <string>$(this).val();
+    //     let lower = value.toLowerCase();
+    //     console.log(
+    //       '🚀 ~ file: search-farm.component.ts ~ line 29 ~ SearchFarmComponent ~ $ ~ val',
+    //       lower
+    //     );
+    //     function isSame(element: string, index: any, array: any) {
+    //       return element;
+    //     }
+    //     // let li = $('#myList li');
+    //     // li.filter(()=>{
+    //     //   return $(this).toggle($(this).text().toLowerCase().indexOf(lower) > -1)
+    //     // });
 
-        // console.log("🚀 ~ file: search-farm.component.ts ~ line 34 ~ SearchFarmComponent ~ li", li)
+    //     // console.log("🚀 ~ file: search-farm.component.ts ~ line 34 ~ SearchFarmComponent ~ li", li)
 
-        // $("#myList li").filter(function() {
-        //   return !$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        // });
-      });
-    });
+    //     // $("#myList li").filter(function() {
+    //     //   return !$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    //     // });
+    //   });
+    // });
 
     // this.route.queryParams.subscribe((params) => {
     //   this.id = params['id'];
     // });
+  }
+  changeSearchFarm(){
+    const result = this.farmsOld.filter(s => s.id.toLowerCase().includes(this.textSearch.toLowerCase()));
+this.farms = result;
   }
 }

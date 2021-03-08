@@ -1,3 +1,4 @@
+import { SearchFarmComponent } from './page/search-farm/search-farm.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
