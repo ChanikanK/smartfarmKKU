@@ -62,19 +62,22 @@
   <!-- Content Row -->
   <div class="d-inline-flex flex-wrap m-2" style="border-radius: .25rem; background-color: #e4e4e4;">
     <!-- Farm Card -->
-    <div class="p-0" *ngFor="let farm of farms let i = index">
-      <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/station"
-        [queryParams]="{id: farm.name.value}">
-        <div class="card farm-card text-white m-2">
-          <img class="card-img-top" src="http://placehold.it/800x600/999999/fff" style="max-height: 7rem;"
-            alt="Card image cap">
-          <div class="card-body p-2" [style.background-color]=color[i%5]>
-            <p class="card-text">{{farm.name.value}}
-            </p>
+    <div *ngFor="let farm of farms let i = index">
+      <div class="p-0" >
+        <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="pages/station"
+          [queryParams]="{id: farm.id}">
+          <div class="card farm-card text-white m-2">
+            <img class="card-img-top" src="http://placehold.it/800x600/999999/fff" style="max-height: 7rem;"
+              alt="Card image cap">
+            <div class="card-body p-2" [style.background-color]=color[i%5]>
+              <p class="card-text">{{farm.id}}
+              </p>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
     </div>
+
   </div>
 
   <app-search-farm></app-search-farm>

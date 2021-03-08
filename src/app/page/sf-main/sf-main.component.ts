@@ -23,6 +23,8 @@ export class SfMainComponent implements OnInit {
   ngOnInit(): void {
     this.markerService.getFarms().subscribe((res: FarmModel[]) => {
       this.farms = res;
+      console.log("🚀 ~ file: sf-main.component.ts ~ line 26 ~ SfMainComponent ~ this.markerService.getFarms ~ this.farms", this.farms)
+
     });
 
     this.route.queryParams.subscribe((params) => {

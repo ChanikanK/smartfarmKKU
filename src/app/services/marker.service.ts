@@ -8,7 +8,7 @@ import { FarmModel } from '../models/farm-model';
   providedIn: 'root',
 })
 export class MarkerService {
-  farmStation: string = 'https://apiweedsmf.kku.ac.th/v2/entities';
+  farmStation: string = 'https://apiweedsmf.kku.ac.th/orion/v2/entities';
   // farmStation: string = 'https://fiwareorion.kku.ac.th/v2/entities?type=SensorWifi';
   // farmStationUrl: string = 'https://domain/v2/entities?type=FarmKKU';
 
