@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as L from 'leaflet';
 import { Observable } from 'rxjs';
-import { FarmModel } from '../models/farm-model';
+import { FarmModel, SensorModel } from '../models/farm-model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +21,15 @@ export class MarkerService {
     return this.http.get<FarmModel[]>(this.farmStation);
   }
 
+  getFarmByFiwareService(fiwareService: string): Observable<SensorModel[]> {
+    const httpHeaders = new HttpHeaders({
+      'fiware-service': fiwareService,
+      'fiware-servicepath': '',
+    });
+    return this.http.get<SensorModel[]>(this.farmStation, {
+      headers: httpHeaders,
+    });
+  }
   // getFarm(id:number|string): Observable<FarmModel[]>{
   //   return this.http.get<FarmModel[]>(this.farmStation).filter(
   //     function(product,i){

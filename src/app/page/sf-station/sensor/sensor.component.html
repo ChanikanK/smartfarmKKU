@@ -1,0 +1,21 @@
+<div class="card shadow mb-4">
+  <div class="card-body">
+    <h1 class="card-title">{{ sensor.mounting_point_name.value }}</h1>
+    <div class="" *ngFor="let need of neededArray; let i = index">
+      <h3
+        *ngIf="
+          need.data.value != null && need.data.value.toString().trim() != ''
+        "
+      >
+        {{
+          need.data.metadata.name.value == ""
+            ? need.name
+            : need.data.metadata.name.value
+        }}
+        <span style="float: right">{{
+          need.data.value.toString().trim()
+        }}</span>
+      </h3>
+    </div>
+  </div>
+</div>
