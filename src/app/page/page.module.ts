@@ -13,6 +13,7 @@ import { SfStationComponent } from './sf-station/sf-station.component';
 import { SfStationCardComponent } from './sf-station-card/sf-station-card.component';
 import { SearchFarmComponent } from './search-farm/search-farm.component';
 import { HomeModule } from './home/home.module';
+import { SensorComponent } from './sf-station/sensor/sensor.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HomeModule } from './home/home.module';
     SfStationComponent,
     SfStationCardComponent,
     SearchFarmComponent,
+    SensorComponent,
   ],
   imports: [
     CommonModule,
