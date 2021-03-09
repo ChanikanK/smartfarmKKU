@@ -3,20 +3,28 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as L from 'leaflet';
 import { Observable } from 'rxjs';
 import { FarmModel, SensorModel } from '../models/farm-model';
+import * as globalVar from 'src/app/globals'
 
 @Injectable({
   providedIn: 'root',
 })
 export class MarkerService {
-  farmStation: string = 'https://apiweedsmf.kku.ac.th/orion/v2/entities';
-  // farmStation: string = 'https://fiwareorion.kku.ac.th/v2/entities?type=SensorWifi';
-  // farmStationUrl: string = 'https://domain/v2/entities?type=FarmKKU';
+  farmStation: string = globalVar.farmAPILink;
 
   constructor(private http: HttpClient) {}
   // makeStationMarkers(map: L.Map): Observable<FarmModel[]>{
   //   return this.http.get<FarmModel[]>(this.farmStation)
   //   ;
   // }
+
+  setFarmStation(val: string){
+    this.farmStation = val;
+  }
+
+  getFarmStation(val: string){
+    return this.farmStation;
+  }
+
   getFarms(): Observable<FarmModel[]> {
     return this.http.get<FarmModel[]>(this.farmStation);
   }

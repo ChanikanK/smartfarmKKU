@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FarmModel } from 'src/app/models/farm-model';
 import { MarkerService } from 'src/app/services/marker.service';
+import * as globalVar from 'src/app/globals';
 
 @Component({
   selector: 'app-home',
@@ -54,7 +55,7 @@ export class HomeComponent implements OnInit {
       //   }
       // });
     });
-
+    this.markerService.setFarmStation(globalVar.farmAPILink+ '?type=FarmKKU');
     this.markerService.getFarms().subscribe((res: FarmModel[]) => {
       this.farms = res;
       for (let i = 0; i < this.farms.length; i++) {
