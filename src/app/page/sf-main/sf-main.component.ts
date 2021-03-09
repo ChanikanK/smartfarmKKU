@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FarmModel } from 'src/app/models/farm-model';
 import { MarkerService } from 'src/app/services/marker.service';
-import * as globalVar from 'src/app/globals';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-sf-main',
@@ -16,10 +16,12 @@ export class SfMainComponent implements OnInit {
   // params: any;
   id!: string;
   type!: string;
+  firstIndex = 0;
 
   constructor(
     private markerService: MarkerService,
-    private route: ActivatedRoute // Activated route to get the current component's inforamation) {}
+    private route: ActivatedRoute, // Activated route to get the current component's inforamation) {}
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -28,13 +30,22 @@ export class SfMainComponent implements OnInit {
       this.type = params['type'];
     });
     this.pageTitle = this.id;
-    this.markerService.setFarmStation(globalVar.farmAPILink + '?type=' + this.type);
+    this.markerService.setFarmStation(
+      environment.farmAPILink + '?type=' + this.type
+    );
     this.markerService.getFarms().subscribe((res: FarmModel[]) => {
       this.farms = res;
-      console.log(
-        '🚀 ~ file: sf-main.component.ts ~ line 26 ~ SfMainComponent ~ this.markerService.getFarms ~ this.farms',
-        this.farms
-      );
+      for (let i = 0; i < this.farms.length; i++) {
+        if (this.farms[i].name) {
+          this.firstIndex = i;
+          break;
+        }
+      }
     });
+
+  }
+
+  clickStation(name: string) {
+    this.router.navigateByUrl('/pages/station?id=' + name);
   }
 }

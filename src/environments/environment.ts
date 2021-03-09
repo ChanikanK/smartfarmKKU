@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  farmAPILink:  'https://apiweedsmf.kku.ac.th/orion/v2/entities',
+  sthAPILink: 'https://apiweedsmf.kku.ac.th/sth/STH/v1/contextEntities'
 };
 
 /*

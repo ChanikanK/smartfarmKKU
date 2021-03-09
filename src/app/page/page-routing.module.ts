@@ -19,7 +19,8 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
-  { path: 'main', component: SfMainComponent },
+  { path: 'mainFarm', component: SfMainComponent },
+  { path: 'mainWT', component: SfMainComponent },
 
   { path: 'station', component: SfStationComponent },
   {

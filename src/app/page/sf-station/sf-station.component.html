@@ -16,7 +16,7 @@
   <!-- Dashboard Card row-->
   <div class="row">
     <!-- Electric Cost -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <!-- <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-left-success shadow h-100 py-2">
         <div class="card-body">
           <div class="sf-gray-manatee text-uppercase mb-1">Electric Cost</div>
@@ -37,10 +37,10 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Water Cost -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <!-- <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-left-success shadow h-100 py-2">
         <div class="card-body">
           <div class="sf-gray-manatee text-uppercase mb-1">Water Cost</div>
@@ -61,19 +61,15 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
+
+  <app-gauges></app-gauges>
 
   <!-- Content Row -->
   <div class="row">
-    <div
-      class="col-xl-4 col-lg-4"
-      *ngFor="let sensor of sensors; let i = index"
-    >
-      <app-sensor
-        *ngIf="sensor.mounting_point_name"
-        [sensor]="sensor"
-      ></app-sensor>
+    <div class="col-xl-4 col-lg-4" *ngFor="let sensor of sensors; let i = index">
+      <app-sensor *ngIf="sensor.mounting_point_name" [sensor]="sensor"></app-sensor>
     </div>
     <!-- <div class="col-xl-6 col-lg-6">
       <h3 class="py-1 sf-blue-midnight">Sensors</h3>

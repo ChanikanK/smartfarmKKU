@@ -15,6 +15,10 @@ import { SearchFarmComponent } from './search-farm/search-farm.component';
 import { HomeModule } from './home/home.module';
 import { SensorComponent } from './sf-station/sensor/sensor.component';
 import { FormsModule } from '@angular/forms';
+import { GaugesComponent } from './gauges/gauges.component';
+import { Component } from '@angular/core';
+import { GaugeModule } from 'angular-gauge';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +28,7 @@ import { FormsModule } from '@angular/forms';
     SfStationCardComponent,
     SearchFarmComponent,
     SensorComponent,
+    GaugesComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +38,7 @@ import { FormsModule } from '@angular/forms';
     HomeModule,
     ChartsModule,
     HttpClientModule,
+    GaugeModule.forRoot()
   ],
 })
 export class PageModule {}

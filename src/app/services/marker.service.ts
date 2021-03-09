@@ -2,14 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as L from 'leaflet';
 import { Observable } from 'rxjs';
-import { FarmModel, SensorModel } from '../models/farm-model';
-import * as globalVar from 'src/app/globals'
+import {
+  FarmModel,
+  SensorModel,
+  contextResponsesModel,
+} from '../models/farm-model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MarkerService {
-  farmStation: string = globalVar.farmAPILink;
+  farmStation: string = environment.farmAPILink;
+  shortTerm: string = environment.sthAPILink;
 
   constructor(private http: HttpClient) {}
   // makeStationMarkers(map: L.Map): Observable<FarmModel[]>{
@@ -17,11 +22,11 @@ export class MarkerService {
   //   ;
   // }
 
-  setFarmStation(val: string){
+  setFarmStation(val: string) {
     this.farmStation = val;
   }
 
-  getFarmStation(val: string){
+  getFarmStation(val: string) {
     return this.farmStation;
   }
 
@@ -46,4 +51,40 @@ export class MarkerService {
   //   );
   //   ;
   // }
+
+  getShortTerm(
+    fiwareService: string,
+    id: string,
+    type: string,
+    attr: string,
+    aggrMethiod: string,
+    aggrPeriod: string,
+    dateFrom: string,
+    dateTo: string
+  ): Observable<contextResponsesModel[]> {
+    const httpHeaders = new HttpHeaders({
+      'fiware-service': fiwareService,
+      'fiware-servicepath': '/',
+    });
+    return this.http.get<contextResponsesModel[]>(
+      this.shortTerm +
+        '/type/' +
+        type +
+        '/id/' +
+        id +
+        '/attributes/' +
+        attr +
+        '?aggrMethod=' +
+        aggrMethiod +
+        '&aggrPeriod=' +
+        aggrPeriod +
+        '&dateFrom=' +
+        dateFrom +
+        '&dateTo=' +
+        dateTo,
+      {
+        headers: httpHeaders,
+      }
+    );
+  }
 }

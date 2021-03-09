@@ -1,7 +1,3 @@
-// export class FarmModel {
-//   id!: string;
-// }
-
 export interface FarmModel {
   id: string;
   type: string;
@@ -63,4 +59,38 @@ export class SensorRePackModel {
   data!: FarmName;
   name!: string;
   unit!: string;
+}
+
+export class contextResponsesModel {
+  contextElement!: contextElement;
+  statusCode!: any;
+}
+
+export class contextElement {
+  attributes!: attributesModel;
+  id!: string;
+  isPattern!: boolean;
+  type!: string;
+}
+
+export class attributesModel {
+  name!: string;
+  value!: valueModel[];
+}
+
+export class valueModel {
+  _id!: valueIDModel;
+  point!: pointModel;
+}
+
+export class valueIDModel {
+  attrName!: string;
+  origin!: string;
+  resolution!: string;
+}
+
+export class pointModel {
+  offset!: number;
+  samples!: number;
+  max!: number;
 }
