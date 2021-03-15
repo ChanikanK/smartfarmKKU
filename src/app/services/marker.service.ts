@@ -17,10 +17,6 @@ export class MarkerService {
   shortTerm: string = environment.sthAPILink;
 
   constructor(private http: HttpClient) {}
-  // makeStationMarkers(map: L.Map): Observable<FarmModel[]>{
-  //   return this.http.get<FarmModel[]>(this.farmStation)
-  //   ;
-  // }
 
   setFarmStation(val: string) {
     this.farmStation = val;
@@ -43,14 +39,6 @@ export class MarkerService {
       headers: httpHeaders,
     });
   }
-  // getFarm(id:number|string): Observable<FarmModel[]>{
-  //   return this.http.get<FarmModel[]>(this.farmStation).filter(
-  //     function(product,i){
-  //       return product.id == id ? product : null;
-  //     }
-  //   );
-  //   ;
-  // }
 
   getShortTerm(
     fiwareService: string,

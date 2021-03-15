@@ -17,5 +17,8 @@
         }}</span>
       </h3>
     </div>
+    <div class="bg-dark text-white" *ngFor="let ap of attrPart; let i = index">{{ap.name}}
+      <div>{{ap.valuesArr}}</div>
+    </div>
   </div>
 </div>

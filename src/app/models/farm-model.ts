@@ -75,12 +75,18 @@ export class contextElement {
 
 export class attributesModel {
   name!: string;
-  value!: valueModel[];
+  values!: valueModel[];
+}
+
+export class attributesReModel {
+  name!: string;
+  values!: valueModel[];
+  valuesArr!: Array<any >;
 }
 
 export class valueModel {
   _id!: valueIDModel;
-  point!: pointModel;
+  points!: pointModel[];
 }
 
 export class valueIDModel {

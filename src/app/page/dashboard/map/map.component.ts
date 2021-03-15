@@ -58,10 +58,6 @@ export class MapComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.initMap();
     this.markerService.getFarms().subscribe((res: FarmModel[]) => {
-      console.log(
-        '🚀 ~ file: marker.service.ts ~ line 14 ~ MarkerService ~ this.http.get ~ res',
-        res
-      );
       for (const c of res) {
         if (c.geo) {
           const lat = c.geo.value.lat;
