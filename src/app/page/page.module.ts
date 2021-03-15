@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { GaugesComponent } from './gauges/gauges.component';
 import { Component } from '@angular/core';
 import { GaugeModule } from 'angular-gauge';
+import { LineChartTimeComponent } from './sf-station/line-chart-time/line-chart-time.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { GaugeModule } from 'angular-gauge';
     SearchFarmComponent,
     SensorComponent,
     GaugesComponent,
+    LineChartTimeComponent,
   ],
   imports: [
     CommonModule,

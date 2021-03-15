@@ -81,7 +81,8 @@ export class attributesModel {
 export class attributesReModel {
   name!: string;
   values!: valueModel[];
-  valuesArr!: Array<any >;
+  // valuesArr!: Array<any>;
+  valueJson!: chartJS[];
 }
 
 export class valueModel {
@@ -99,4 +100,9 @@ export class pointModel {
   offset!: number;
   samples!: number;
   max!: number;
+}
+
+export class chartJS {
+  data!: Array<any>;
+  label!: string;
 }

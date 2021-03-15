@@ -39,6 +39,11 @@ export class BarChartComponent implements OnInit {
     this.barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011'];
     this.httpService.get(this.dataset, { responseType: 'json' }).subscribe(
       (data) => {
+    console.log("🚀 ~ file: bar-chart.component.ts ~ line 42 ~ BarChartComponent ~ ngOnInit ~ this.dataset", this.dataset)
+        console.log(
+          '🚀 ~ file: bar-chart.component.ts ~ line 42 ~ BarChartComponent ~ ngOnInit ~ data',
+          data
+        );
         this.barChartData = data as any[]; // FILL THE CHART ARRAY WITH DATA.
       },
       (err: HttpErrorResponse) => {

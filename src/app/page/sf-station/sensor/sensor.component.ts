@@ -111,16 +111,17 @@ export class SensorComponent implements OnInit {
               attr.values =
                 res2.contextResponses[0].contextElement.attributes[0].values;
 
-
               this.maxValue = [];
               for (let points of attr.values) {
                 for (let point of points.points) {
                   this.maxValue.push(point.max);
                 }
               }
-              attr.valuesArr = this.maxValue;
+              // attr.valuesArr = this.maxValue;
+              attr.valueJson = [{ data: this.maxValue, label: attr.name }];
+
               this.attrPart.push(attr);
-              console.log("🚀 this.attrPart", this.attrPart)
+              console.log('🚀 this.attrPart', this.attrPart);
             });
         }
       }
