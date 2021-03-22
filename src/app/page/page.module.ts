@@ -20,8 +20,8 @@ import { Component } from '@angular/core';
 import { GaugeModule } from 'angular-gauge';
 import { LineChartTimeComponent } from './sf-station/line-chart-time/line-chart-time.component';
 import { SettingDeviceComponent } from './setting-device/setting-device.component';
-import { SettingModule } from './setting-device/setting.module';
-
+import { DialogDeviceComponent } from './dialog-device/dialog-device.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { SettingModule } from './setting-device/setting.module';
     GaugesComponent,
     LineChartTimeComponent,
     SettingDeviceComponent,
+    DialogDeviceComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +45,7 @@ import { SettingModule } from './setting-device/setting.module';
     ChartsModule,
     HttpClientModule,
     GaugeModule.forRoot(),
-    SettingModule
+    MatDialogModule
   ],
 })
 export class PageModule {}
