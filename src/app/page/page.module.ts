@@ -20,6 +20,7 @@ import { Component } from '@angular/core';
 import { GaugeModule } from 'angular-gauge';
 import { LineChartTimeComponent } from './sf-station/line-chart-time/line-chart-time.component';
 import { SettingDeviceComponent } from './setting-device/setting-device.component';
+import { SettingModule } from './setting-device/setting.module';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { SettingDeviceComponent } from './setting-device/setting-device.componen
     HomeModule,
     ChartsModule,
     HttpClientModule,
-    GaugeModule.forRoot()
+    GaugeModule.forRoot(),
+    SettingModule
   ],
 })
 export class PageModule {}
