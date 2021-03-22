@@ -26,7 +26,8 @@
         <i class="fa fa-cloud-sun-rain"></i> Weather Stations </a>
       <a class="list-group-item" href="#">
         <i class="fa fa-microchip"></i> Smart Boards </a>
-      <a class="list-group-item" href="#">
+      <a class="list-group-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+        routerLink="/pages/setting">
         <i class="fa fa-cog"></i> Settings </a>
       <a class="list-group-item" href="#">
         <i class="fa fa-exclamation-circle"></i> News </a>

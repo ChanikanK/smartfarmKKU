@@ -64,11 +64,11 @@
     </div> -->
   </div>
 
-  <app-gauges></app-gauges>
+  <!-- <app-gauges></app-gauges> -->
 
   <!-- Content Row -->
   <div class="row">
-    <div class="col-xl-4 col-lg-4" *ngFor="let sensor of sensors; let i = index">
+    <div class="col-12" *ngFor="let sensor of sensors; let i = index">
       <app-sensor *ngIf="sensor.mounting_point_name" [sensor]="sensor"></app-sensor>
     </div>
     <!-- <div class="col-xl-6 col-lg-6">

@@ -8,8 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./line-chart-time.component.scss'],
 })
 export class LineChartTimeComponent implements OnInit {
-  @Input() dataset = '';
   @Input() dataArr: any = [];
+  @Input() labelArr: any = [];
+
   lineChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
@@ -37,33 +38,7 @@ export class LineChartTimeComponent implements OnInit {
   constructor(private httpService: HttpClient) {}
 
   ngOnInit(): void {
-    this.lineChartLabels = [
-      '2006',
-      '2007',
-      '2008',
-      '2009',
-      '2010',
-      '2011',
-      '2006',
-      '2007',
-      '2008',
-      '2009',
-      '2010',
-      '2011',
-      '2006',
-      '2007',
-      '2008',
-      '2009',
-      '2010',
-      '2011',
-      '2006',
-      '2007',
-      '2008',
-      '2009',
-      '2010',
-      '2011',
-    ];
-
+    this.lineChartLabels = this.labelArr;
     this.lineChartData = this.dataArr as any[];
   }
 }

@@ -19,6 +19,7 @@ import { GaugesComponent } from './gauges/gauges.component';
 import { Component } from '@angular/core';
 import { GaugeModule } from 'angular-gauge';
 import { LineChartTimeComponent } from './sf-station/line-chart-time/line-chart-time.component';
+import { SettingDeviceComponent } from './setting-device/setting-device.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { LineChartTimeComponent } from './sf-station/line-chart-time/line-chart-
     SensorComponent,
     GaugesComponent,
     LineChartTimeComponent,
+    SettingDeviceComponent,
   ],
   imports: [
     CommonModule,

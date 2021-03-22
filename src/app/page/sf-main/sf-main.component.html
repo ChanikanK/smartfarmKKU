@@ -60,23 +60,26 @@
   </div>
 
   <!-- Content Row -->
-  <div class="d-inline-flex flex-wrap m-2" style="border-radius: .25rem; background-color: #e4e4e4;">
+  <div class="d-inline-flex flex-wrap px-3 py-2" style="border-radius: 14px; background-color: #e4e4e4;">
     <!-- Farm Card -->
     <div *ngFor="let farm of farms let i = index">
       <div *ngIf="farm.name" class="">
         <div (click)="clickStation(farm.fiware_service.value)" class="text-white" style="cursor: pointer">
-          <div class="card farm-card text-white m-2">
-            <img class="card-img-top" src="http://placehold.it/800x600/999999/fff" style="max-height: 7rem"
+          <div class="card farm-card text-white m-2" [style.background-color]="color[i % 5]"
+            style="border:0; border-radius: 12px">
+            <img class="" src="http://placehold.it/800x600/999999/fff"
+              style="max-height: 7rem; border-top-left-radius: inherit; border-top-right-radius: inherit;"
               alt="Card image" />
-            <div class="card-body p-2" [style.background-color]="color[i % 5]">
+            <div class="card-body p-2" style="min-height: 4rem;">
               <p class="card-text">{{ farm.name.value }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
-  <app-search-farm></app-search-farm>
+  <!-- <div class="py-3">
+    <app-search-farm></app-search-farm>
+  </div> -->
 </div>

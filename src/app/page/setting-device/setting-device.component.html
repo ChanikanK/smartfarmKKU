@@ -1,0 +1,141 @@
+<div class="container-fluid">
+  <!-- Header -->
+  <div class="d-flex justify-content-between pt-3 pb-2 mb-3 border-bottom">
+    <!-- <div class="col-1 d-md-none"></div> -->
+    <p class="h2 sf-blue-midnight">{{pageTitle}}</p>
+    <div class="ml-2 m-0 form-group">
+      <input type="text" class="form-control" placeholder="Search ...">
+    </div>
+  </div>
+  <div class="card">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs row m-0">
+      <li class="nav-item col p-0">
+        <a class="nav-link active" data-toggle="tab" href="#sensors">
+          <span class="circle-20 sf-green-tepapa-light-bg mr-2">1</span>
+          Sonsors</a>
+      </li>
+      <li class="nav-item col p-0">
+        <a class="nav-link" data-toggle="tab" href="#device">
+          <span class="circle-20 sf-green-tepapa-light-bg mr-2">2</span>
+          Device templates</a>
+      </li>
+      <li class="nav-item col p-0">
+        <a class="nav-link" data-toggle="tab" href="#service">
+          <span class="circle-20 sf-green-tepapa-light-bg mr-2">3</span>
+          Services</a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active container p-5" id="sensors">
+        <form>
+          <h2 class="text-center">Add sensor</h2>
+          <div class="form-group">
+            <label for="">Sensors Name:</label>
+            <input type="text" class="form-control" id="" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="">ชื่อเซนเซอร์ภาษาไทย:</label>
+            <input type="text" class="form-control" id="" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="">Data type:</label>
+            <select class="form-control">
+              <option value="float">float</option>
+              <option value="int">int</option>
+              <option value="bool">bool</option>
+              <option value="string">string</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="">Min:</label>
+            <input type="text" class="form-control" id="" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="">Max:</label>
+            <input type="text" class="form-control" id="" placeholder="">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="tab-pane container p-5" id="device">
+        <div class="d-flex justify-content-between">
+          <h2>Your templates</h2>
+          <div>
+            <button type="button" class="btn mx-2 btn-primary">Create template</button>
+          </div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Type</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Template 1</td>
+              <td>Type 1</td>
+              <td>
+                <button type="button" class="btn btn-sm mx-2 btn-warning">Edit</button>
+                <button type="button" class="btn btn-sm mx-2 btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Template 1</td>
+              <td>Type 2</td>
+              <td>
+                <button type="button" class="btn btn-sm mx-2 btn-warning">Edit</button>
+                <button type="button" class="btn btn-sm mx-2 btn-danger">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane container p-5" id="service">
+        <div class="d-flex justify-content-between">
+          <h2>Your services</h2>
+          <div>
+            <button type="button" class="btn mx-2 btn-primary">Create service</button>
+          </div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Type</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>service 1</td>
+              <td>Type 1</td>
+              <td>
+                <button type="button" class="btn btn-sm mx-2 btn-warning">Edit</button>
+                <button type="button" class="btn btn-sm mx-2 btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>service 2</td>
+              <td>Type 2</td>
+              <td>
+                <button type="button" class="btn btn-sm mx-2 btn-warning">Edit</button>
+                <button type="button" class="btn btn-sm mx-2 btn-danger">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -33,8 +33,9 @@ export class SensorComponent implements OnInit {
   dateTime!: Date;
 
   // For Chart Data
+  timeOrigin!: string;
   maxValue: Array<number> = [];
-  // timeOffset!: Array<number>;
+  timeOffset: Array<any> = [];
 
   constructor(
     private markerService: MarkerService,
@@ -88,6 +89,7 @@ export class SensorComponent implements OnInit {
           sensorAttr.data.value != null &&
           sensorAttr.data.value.toString().trim() != ''
         ) {
+        console.log("🚀 this.neededArray", this.neededArray)
           this.attr = sensorAttr.name;
           this.markerService
             .getShortTerm(
@@ -101,7 +103,7 @@ export class SensorComponent implements OnInit {
               this.dateTo
             )
             .subscribe((res: contextResponsesModel[]) => {
-              console.log('shortTerm: ', res);
+              // console.log('shortTerm: ', res);
               this.shortTerm = res;
               let res2: any = res;
 
@@ -112,16 +114,33 @@ export class SensorComponent implements OnInit {
                 res2.contextResponses[0].contextElement.attributes[0].values;
 
               this.maxValue = [];
+              this.timeOffset = [];
+              let j = 1;
               for (let points of attr.values) {
+                this.timeOrigin = points._id.origin;
+                let i = 1;
                 for (let point of points.points) {
                   this.maxValue.push(point.max);
+                  let origin = new Date(this.timeOrigin);
+                  // Show date only first time and midnight
+                  if ((i == 1 && j == 1) || point.offset == 17) {
+                    let offsetTime = new Date(
+                      origin.setHours(origin.getHours() + point.offset)
+                    ).toLocaleString('TH-th');
+                    this.timeOffset.push(offsetTime);
+                  } else {
+                    let offsetTime = new Date(
+                      origin.setHours(origin.getHours() + point.offset)
+                    ).toLocaleTimeString('TH-th');
+                    this.timeOffset.push(offsetTime);
+                  }
+                  i++;
                 }
+                j++;
               }
-              // attr.valuesArr = this.maxValue;
+              attr.offsetTimeArr = this.timeOffset;
               attr.valueJson = [{ data: this.maxValue, label: attr.name }];
-
               this.attrPart.push(attr);
-              console.log('🚀 this.attrPart', this.attrPart);
             });
         }
       }

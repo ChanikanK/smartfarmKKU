@@ -1,25 +1,41 @@
-<div class="card shadow mb-4">
-  <div class="card-body">
-    <h1 class="card-title">{{ sensor.mounting_point_name.value }}</h1>
-    <div class="" *ngFor="let need of neededArray; let i = index">
-      <h3
-        *ngIf="
+<div class="text-center">
+  <h1>{{ sensor.mounting_point_name.value }}</h1>
+</div>
+<div class="row">
+  <div class="col-12 col-lg-4 col-xl-3">
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <!-- <h1 class="card-title">{{ sensor.mounting_point_name.value }}</h1> -->
+        <div class="" *ngFor="let need of neededArray; let i = index">
+          <h3 *ngIf="
           need.data.value != null && need.data.value.toString().trim() != ''
-        "
-      >
-        {{
+        ">
+            {{
           need.data.metadata.name.value == ""
             ? need.name
             : need.data.metadata.name.value
         }}
-        <span style="float: right">{{
+            <span style="float: right">{{
           need.data.value.toString().trim()
         }}</span>
-      </h3>
-    </div>
-    <div class="bg-dark text-white" *ngFor="let ap of attrPart; let i = index">{{ap.name}}
-      <div>{{ap.valueJson[0].data}}</div>
-      <app-line-chart-time [dataset] = ap.valuesJson [dataArr]= ap.valueJson></app-line-chart-time>
+        <app-gauges></app-gauges>
+          </h3>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="col-12 col-lg-8 col-xl-9">
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <!-- <h1 class="card-title">{{ sensor.mounting_point_name.value }}</h1> -->
+        <div class="row">
+          <div class="col-12" *ngFor="let ap of attrPart; let i = index">
+            <app-line-chart-time [dataArr]=ap.valueJson [labelArr]=ap.offsetTimeArr></app-line-chart-time>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

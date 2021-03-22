@@ -12,27 +12,12 @@
         <div class="carousel-inner row w-100 mx-auto px-2">
           <!-- Farm Card -->
           <ng-container *ngFor="let farm of farms; let i = index">
-            <div
-              *ngIf="farm.name"
-              class="carousel-item col-md-4 p-1"
-              [class.active]="i == firstIndex"
-            >
-              <div
-                (click)="clickStation(farm.fiware_service.value)"
-                class="text-white"
-                style="cursor: pointer"
-              >
-                <div class="card shadow m-2">
-                  <img
-                    class="card-img-top"
-                    src="http://placehold.it/800x600/999999/fff"
-                    style="max-height: 7rem"
-                    alt="Card image cap"
-                  />
-                  <div
-                    class="card-body p-2"
-                    [style.background-color]="color[i % 5]"
-                  >
+            <div *ngIf="farm.name" class="carousel-item col-md-4 p-1" [class.active]="i == firstIndex">
+              <div (click)="clickStation(farm.fiware_service.value)" class="text-white" style="cursor: pointer">
+                <div class="card shadow m-2" [style.background-color]="color[i % 5]" [style.border]="0">
+                  <img class="card-img-top" src="http://placehold.it/800x600/999999/fff" style="max-height: 7rem"
+                    alt="Card image cap" />
+                  <div class="card-body p-2">
                     <p class="card-text">{{ farm.name.value }}</p>
                   </div>
                 </div>
@@ -68,21 +53,11 @@
             </a>
           </div> -->
         </div>
-        <a
-          class="carousel-control-prev"
-          href="#myCarousel"
-          role="button"
-          data-slide="prev"
-        >
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a
-          class="carousel-control-next"
-          href="#myCarousel"
-          role="button"
-          data-slide="next"
-        >
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>

@@ -35,6 +35,7 @@ export class SfMainComponent implements OnInit {
     );
     this.markerService.getFarms().subscribe((res: FarmModel[]) => {
       this.farms = res;
+      console.log("🚀 FarmModel", res)
       for (let i = 0; i < this.farms.length; i++) {
         if (this.farms[i].name) {
           this.firstIndex = i;

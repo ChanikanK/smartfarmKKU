@@ -81,7 +81,7 @@ export class attributesModel {
 export class attributesReModel {
   name!: string;
   values!: valueModel[];
-  // valuesArr!: Array<any>;
+  offsetTimeArr!: Array<any>;
   valueJson!: chartJS[];
 }
 

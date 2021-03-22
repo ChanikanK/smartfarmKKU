@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SfMainComponent } from './sf-main/sf-main.component';
 import { SfStationComponent } from './sf-station/sf-station.component';
+import { SettingDeviceComponent } from './setting-device/setting-device.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  { path: 'setting', component: SettingDeviceComponent },
 ];
 
 @NgModule({
