@@ -24,6 +24,7 @@
     "@asymmetrik/ngx-leaflet": "^8.1.0",
     "@types/jquery": "^3.5.5",
     "@types/leaflet": "^1.5.21",
+    "angular-dual-listbox": "^6.0.0",
     "angular-filter": "^0.5.17",
     "angular-gauge": "^4.0.0",
     "bootstrap": "^4.6.0",

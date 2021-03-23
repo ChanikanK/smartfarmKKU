@@ -21,7 +21,9 @@ import { GaugeModule } from 'angular-gauge';
 import { LineChartTimeComponent } from './sf-station/line-chart-time/line-chart-time.component';
 import { SettingDeviceComponent } from './setting-device/setting-device.component';
 import { DialogDeviceComponent } from './dialog-device/dialog-device.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AngularDualListBoxModule } from 'angular-dual-listbox';
+import { DualListboxComponent } from './dual-listbox/dual-listbox.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     GaugesComponent,
     LineChartTimeComponent,
     SettingDeviceComponent,
-    DialogDeviceComponent
+    DialogDeviceComponent,
+    DualListboxComponent,
   ],
   imports: [
     CommonModule,
@@ -45,7 +48,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     ChartsModule,
     HttpClientModule,
     GaugeModule.forRoot(),
-    MatDialogModule
+    MatDialogModule,
+    AngularDualListBoxModule
   ],
 })
 export class PageModule {}
