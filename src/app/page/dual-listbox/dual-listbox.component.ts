@@ -38,7 +38,7 @@ export class DualListboxComponent implements OnInit {
       },
       {
         _id: 2,
-        _name: 'Rook',
+        name: 'Rook',
       },
       {
         _id: 3,

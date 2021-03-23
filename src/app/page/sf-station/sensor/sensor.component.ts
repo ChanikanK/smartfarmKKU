@@ -67,6 +67,8 @@ export class SensorComponent implements OnInit {
         const sensorRP = new SensorRePackModel();
         sensorRP.name = prop;
         sensorRP.data = Object.values(this.sensor)[i];
+        // sensorRP.data.value = Number(sensorRP.data.value)
+        // console.log("🚀  sensorRP.data", sensorRP.data.value)
         this.neededArray.push(sensorRP);
       }
       i++;
@@ -89,6 +91,10 @@ export class SensorComponent implements OnInit {
           sensorAttr.data.value != null &&
           sensorAttr.data.value.toString().trim() != ''
         ) {
+          // convert type of data.value for using in the gauges
+          sensorAttr.data.value = Number(sensorAttr.data.value)
+          sensorAttr.data.metadata.ranges.value.max = Number(sensorAttr.data.metadata.ranges.value.max)
+          sensorAttr.data.metadata.ranges.value.min = Number(sensorAttr.data.metadata.ranges.value.min)
         console.log("🚀 this.neededArray", this.neededArray)
           this.attr = sensorAttr.name;
           this.markerService

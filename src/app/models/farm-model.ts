@@ -20,7 +20,7 @@ export interface FarmGeo {
 
 export interface FarmName {
   type: string;
-  value: string;
+  value: any;
   metadata: MetadataValue;
 }
 
@@ -31,7 +31,19 @@ export interface CoordValue {
 export interface MetadataValue {
   TimeInstant: Value;
   name: Value;
+  ranges: RangeModel;
 }
+
+export interface RangeModel {
+  type: string;
+  value: RangeValueModel;
+}
+
+export interface RangeValueModel {
+  max: any;
+  min: any;
+}
+
 export interface Value {
   type: string;
   value: string;

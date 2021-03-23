@@ -18,7 +18,8 @@
             <span style="float: right">{{
           need.data.value.toString().trim()
         }}</span>
-        <app-gauges></app-gauges>
+        <app-gauges [inputValue] = need.data.value [inputMax] = 100 [inputMin] = 0></app-gauges>
+        <!-- <app-gauges [inputValue] = need.data.value [inputMax] = need.data.metadata.ranges.value.max [inputMin] = need.data.metadata.ranges.value.min></app-gauges> -->
           </h3>
         </div>
       </div>
