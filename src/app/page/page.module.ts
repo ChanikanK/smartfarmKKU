@@ -14,7 +14,7 @@ import { SfStationCardComponent } from './sf-station-card/sf-station-card.compon
 import { SearchFarmComponent } from './search-farm/search-farm.component';
 import { HomeModule } from './home/home.module';
 import { SensorComponent } from './sf-station/sensor/sensor.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GaugesComponent } from './gauges/gauges.component';
 import { Component } from '@angular/core';
 import { GaugeModule } from 'angular-gauge';
@@ -24,6 +24,7 @@ import { DialogDeviceComponent } from './dialog-device/dialog-device.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AngularDualListBoxModule } from 'angular-dual-listbox';
 import { DualListboxComponent } from './dual-listbox/dual-listbox.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,9 @@ import { DualListboxComponent } from './dual-listbox/dual-listbox.component';
     HttpClientModule,
     GaugeModule.forRoot(),
     MatDialogModule,
-    AngularDualListBoxModule
+    AngularDualListBoxModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule
   ],
 })
 export class PageModule {}
