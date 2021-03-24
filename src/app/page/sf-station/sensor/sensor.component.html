@@ -18,7 +18,7 @@
             <span style="float: right">{{
           need.data.value.toString().trim()
         }}</span>
-        <app-gauges [inputValue] = need.data.value [inputMax] = 100 [inputMin] = 0></app-gauges>
+        <!-- <app-gauges [inputValue] = need.data.value [inputMax] = 100 [inputMin] = 0></app-gauges> -->
         <!-- <app-gauges [inputValue] = need.data.value [inputMax] = need.data.metadata.ranges.value.max [inputMin] = need.data.metadata.ranges.value.min></app-gauges> -->
           </h3>
         </div>
@@ -32,7 +32,7 @@
         <!-- <h1 class="card-title">{{ sensor.mounting_point_name.value }}</h1> -->
         <div class="row">
           <div class="col-12" *ngFor="let ap of attrPart; let i = index">
-            <app-line-chart-time [dataArr]=ap.valueJson [labelArr]=ap.offsetTimeArr></app-line-chart-time>
+            <!-- <app-line-chart-time [dataArr]=ap.valueJson [labelArr]=ap.offsetTimeArr></app-line-chart-time> -->
           </div>
         </div>
       </div>

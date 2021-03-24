@@ -93,9 +93,9 @@ export class SensorComponent implements OnInit {
           sensorAttr.data.value.toString().trim() != ''
         ) {
           // convert type of data.value for using in the gauges
-          sensorAttr.data.value = Number(sensorAttr.data.value)
-          sensorAttr.data.metadata.ranges.value.max = Number(sensorAttr.data.metadata.ranges.value.max)
-          sensorAttr.data.metadata.ranges.value.min = Number(sensorAttr.data.metadata.ranges.value.min)
+          // sensorAttr.data.value = Number(sensorAttr.data.value)
+          // sensorAttr.data.metadata.ranges.value.max = Number(sensorAttr.data.metadata.ranges.value.max)
+          // sensorAttr.data.metadata.ranges.value.min = Number(sensorAttr.data.metadata.ranges.value.min)
         // console.log("🚀 this.neededArray", this.neededArray)
           this.attr = sensorAttr.name;
           this.markerService

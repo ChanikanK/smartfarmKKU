@@ -13,34 +13,39 @@ import { SfStationComponent } from './sf-station/sf-station.component';
 import { SfStationCardComponent } from './sf-station-card/sf-station-card.component';
 import { SearchFarmComponent } from './search-farm/search-farm.component';
 import { HomeModule } from './home/home.module';
-import { SensorComponent } from './sf-station/sensor/sensor.component';
+// import { SensorComponent } from './sf-station/sensor/sensor.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { GaugesComponent } from './gauges/gauges.component';
+// import { GaugesComponent } from './sf-station/gauges/gauges.component';
 import { Component } from '@angular/core';
-import { GaugeModule } from 'angular-gauge';
-import { LineChartTimeComponent } from './sf-station/line-chart-time/line-chart-time.component';
-import { SettingDeviceComponent } from './setting-device/setting-device.component';
-import { DialogDeviceComponent } from './dialog-device/dialog-device.component';
+// import { GaugeModule } from 'angular-gauge';
+// import { LineChartTimeComponent } from './sf-station/line-chart-time/line-chart-time.component';
+// import { DialogDeviceComponent } from './setting-device/dialog-device/dialog-device.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AngularDualListBoxModule } from 'angular-dual-listbox';
-import { DualListboxComponent } from './dual-listbox/dual-listbox.component';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+// import { DualListboxComponent } from './sf-station/dual-listbox/dual-listbox.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { UserLoginComponent } from './user-login/user-login.component';
+// import { DateRangeComponent } from './sf-station/date-range/date-range.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { SettingDeviceComponent } from './setting-device/setting-device.component';
+import { StationModule } from './sf-station/station.module';
+import { SettingDeviceModule } from './setting-device/setting-device.module';
 
 @NgModule({
   declarations: [
     PageComponent,
     SfMainComponent,
-    SfStationComponent,
+    // SfStationComponent,
     SfStationCardComponent,
     SearchFarmComponent,
-    SensorComponent,
-    GaugesComponent,
-    LineChartTimeComponent,
-    SettingDeviceComponent,
-    DialogDeviceComponent,
-    DualListboxComponent,
+    // SensorComponent,
+    // GaugesComponent,
+    // LineChartTimeComponent,
+    // SettingDeviceComponent,
+    // DialogDeviceComponent,
+    // DualListboxComponent,
     UserLoginComponent,
+    // DateRangeComponent,
   ],
   imports: [
     CommonModule,
@@ -48,13 +53,16 @@ import { UserLoginComponent } from './user-login/user-login.component';
     FormsModule,
     DashboardModule,
     HomeModule,
-    ChartsModule,
+    // ChartsModule,
     HttpClientModule,
-    GaugeModule.forRoot(),
+    // GaugeModule.forRoot(),
+    StationModule,
     MatDialogModule,
-    AngularDualListBoxModule,
+    // AngularDualListBoxModule,
     MatAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // MatDatepickerModule,
+    SettingDeviceModule
   ],
 })
 export class PageModule {}
