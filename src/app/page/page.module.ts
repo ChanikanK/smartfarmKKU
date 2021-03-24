@@ -25,6 +25,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AngularDualListBoxModule } from 'angular-dual-listbox';
 import { DualListboxComponent } from './dual-listbox/dual-listbox.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     SettingDeviceComponent,
     DialogDeviceComponent,
     DualListboxComponent,
+    UserLoginComponent,
   ],
   imports: [
     CommonModule,
