@@ -5,6 +5,11 @@ import { MarkerService } from 'src/app/services/marker.service';
 import { Location } from '@angular/common';
 import { environment } from 'src/environments/environment';
 
+interface TimeRange{
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-sf-station',
   templateUrl: './sf-station.component.html',
@@ -14,7 +19,12 @@ export class SfStationComponent implements OnInit {
   pageTitle = 'Station';
   id!: string;
   sensors: SensorModel[] = [];
-
+  timeRange: TimeRange[] = [
+    {value: 'hour' , viewValue: 'Hour'},
+    {value: 'day' , viewValue: 'Day'},
+    {value: 'month' , viewValue: 'Month'},
+  ];
+  selectedRange = this.timeRange[0].value;
   constructor(
     private markerService: MarkerService,
     private route: ActivatedRoute, // Activated route to get the current component's inforamation) {}

@@ -14,63 +14,21 @@
     </div>
   </div>
 
-  <!-- Dashboard Card row-->
-  <div class="row">
-    <!-- Electric Cost -->
-    <!-- <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-success shadow h-100 py-2">
-        <div class="card-body">
-          <div class="sf-gray-manatee text-uppercase mb-1">Electric Cost</div>
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="h5 my-3 sf-blue-midnight">$215,000</div>
-              <div class="d-flex flex-wrap mb-0 text-xs no-gutters">
-                <div class="text-danger mr-2">2.3% ^</div>
-                <div class="sf-gray-manatee">than last year</div>
-              </div>
-            </div>
-            <div class="col-auto">
-              <span class="fa-stack fa-2x sf-brown-blackbean">
-                <i class="fa fa-circle fa-stack-2x" style="opacity: 0.2"></i>
-                <i class="fa fa-bolt fa-stack-1x"></i>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- Water Cost -->
-    <!-- <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-success shadow h-100 py-2">
-        <div class="card-body">
-          <div class="sf-gray-manatee text-uppercase mb-1">Water Cost</div>
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="h5 my-3 sf-blue-midnight">$215,000</div>
-              <div class="d-flex flex-wrap mb-0 text-xs no-gutters">
-                <div class="text-danger mr-2">2.3% ^</div>
-                <div class="sf-gray-manatee">than last year</div>
-              </div>
-            </div>
-            <div class="col-auto">
-              <span class="fa-stack fa-2x sf-green-tepapa">
-                <i class="fa fa-circle fa-stack-2x" style="opacity: 0.2"></i>
-                <i class="fa fa-tint fa-stack-1x"></i>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-  </div>
-
   <div class="row mb-3">
     <div class="col-12">
       <div class="card">
         <!-- <div class="card-header"> Custom Graphs </div> -->
         <div class="card-body">
-          <app-date-range></app-date-range>
+          <form action="">
+            <app-date-range></app-date-range>
+            <mat-form-field appearance="fill">
+              <mat-label>Choose an option</mat-label>
+              <mat-select [(value)]="selectedRange">
+                <mat-option [value]="option.value" *ngFor="let option of timeRange">{{ option.viewValue }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button class="btn btn-primary">Change</button>
+          </form>
         </div>
       </div>
     </div>
@@ -81,25 +39,5 @@
     <div class="col-12" *ngFor="let sensor of sensors; let i = index">
       <app-sensor *ngIf="sensor.mounting_point_name" [sensor]="sensor"></app-sensor>
     </div>
-    <!-- <div class="col-xl-6 col-lg-6">
-      <h3 class="py-1 sf-blue-midnight">Sensors</h3>
-      <div class="card shadow mb-4">
-        <div class="card-body">
-          <div class="">
-            <canvas id=""></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xl-6 col-lg-6">
-      <h3 class="py-1 sf-blue-midnight">Details</h3>
-      <div class="card shadow mb-4">
-        <div class="card-body">
-          <div class="">
-            <canvas id=""></canvas>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </div>
 </div>

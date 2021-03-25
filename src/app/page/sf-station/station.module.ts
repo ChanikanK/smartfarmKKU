@@ -12,6 +12,7 @@ import { ChartsModule } from 'ng2-charts';
 import { LineChartTimeComponent } from './line-chart-time/line-chart-time.component';
 import { MatNativeDateModule } from '@angular/material/core';
 // import { SearchFarmComponent } from './search-farm/search-farm.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     ReactiveFormsModule,
     GaugeModule.forRoot(),
     ChartsModule,
+    MatSelectModule,
   ],
 })
 export class StationModule {}
