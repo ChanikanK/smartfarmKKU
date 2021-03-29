@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SettingDeviceComponent } from './setting-device.component';
-import { DualListboxComponent } from './dual-listbox/dual-listbox.component';
+import { DualListboxComponent } from './dialog-device/dual-listbox/dual-listbox.component';
 import { DialogDeviceComponent } from './dialog-device/dialog-device.component';
 import { AngularDualListBoxModule } from 'angular-dual-listbox';
 
@@ -13,6 +13,6 @@ import { AngularDualListBoxModule } from 'angular-dual-listbox';
   ],
   imports: [CommonModule, AngularDualListBoxModule],
 
-  exports:[DualListboxComponent, DialogDeviceComponent]
+  exports:[DualListboxComponent]
 })
 export class SettingDeviceModule {}
