@@ -12,5 +12,7 @@ import { AngularDualListBoxModule } from 'angular-dual-listbox';
     DialogDeviceComponent,
   ],
   imports: [CommonModule, AngularDualListBoxModule],
+
+  exports:[DualListboxComponent, DialogDeviceComponent]
 })
 export class SettingDeviceModule {}

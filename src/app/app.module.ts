@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LeafletModule,
     HttpClientModule,
     BrowserAnimationsModule,
+
   ],
   providers: [MarkerService],
   bootstrap: [AppComponent],
