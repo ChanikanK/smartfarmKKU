@@ -11,6 +11,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { HttpClientModule } from '@angular/common/http';
 import { MarkerService } from './services/marker.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [AppComponent, SidebarComponent],
@@ -20,7 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LeafletModule,
     HttpClientModule,
     BrowserAnimationsModule,
-
+    MatIconModule
   ],
   providers: [MarkerService],
   bootstrap: [AppComponent],
