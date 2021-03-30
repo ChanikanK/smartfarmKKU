@@ -1,11 +1,15 @@
-import { SensorModel, contextResponsesModel } from './../../models/farm-model';
+import {
+  SensorModel,
+  contextResponsesModel,
+  FarmModel,
+} from './../../models/farm-model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MarkerService } from 'src/app/services/marker.service';
 import { Location } from '@angular/common';
 import { environment } from 'src/environments/environment';
 
-interface TimeRange{
+interface TimeRange {
   value: string;
   viewValue: string;
 }
@@ -19,10 +23,11 @@ export class SfStationComponent implements OnInit {
   pageTitle = 'Station';
   id!: string;
   sensors: SensorModel[] = [];
+  farms!: FarmModel[];
   timeRange: TimeRange[] = [
-    {value: 'hour' , viewValue: 'Hour'},
-    {value: 'day' , viewValue: 'Day'},
-    {value: 'month' , viewValue: 'Month'},
+    { value: 'hour', viewValue: 'Hour' },
+    { value: 'day', viewValue: 'Day' },
+    { value: 'month', viewValue: 'Month' },
   ];
   selectedRange = this.timeRange[0].value;
   constructor(
@@ -38,11 +43,23 @@ export class SfStationComponent implements OnInit {
       this.markerService
         .getFarmByFiwareService(this.id)
         .subscribe((res: SensorModel[]) => {
-          // console.log('SensorModel: ', res);
+          console.log('SensorModel: ', res);
           this.sensors = res;
         });
+      this.pageTitle = this.id;
+
+      // just for calling the farm name. should be edit later.
+      this.markerService.getFarms().subscribe((res: FarmModel[]) => {
+        this.farms = res;
+        for (let i = 0; i < this.farms.length; i++) {
+          if (this.farms[i].fiware_service != undefined) {
+            if (this.farms[i].fiware_service.value == this.id) {
+              this.pageTitle = this.farms[i].name.value;
+            }
+          }
+        }
+      });
     });
-    this.pageTitle = this.id;
   }
 
   backClicked() {

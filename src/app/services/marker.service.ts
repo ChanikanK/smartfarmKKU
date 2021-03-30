@@ -40,6 +40,11 @@ export class MarkerService {
     });
   }
 
+  // getFarmName(farmID: string) {
+  //   // this.getFarms().subscribe;
+  //   return this.http.get<FarmModel[]>(this.farmStation);
+  // }
+
   getShortTerm(
     fiwareService: string,
     id: string,
