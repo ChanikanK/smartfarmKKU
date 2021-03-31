@@ -129,3 +129,23 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-body, .mat-body-1, .mat-typography{
+  font-family: 'K2D', sans-serif;}
+
+mwl-gauge > .gauge > .dial {
+  stroke: #ccc;
+  stroke-width: 5;
+  fill: rgba(0, 0, 0, 0);
+}
+mwl-gauge > .gauge > .value {
+  stroke: #543526;
+  stroke-width: 5;
+  fill: rgba(0, 0, 0, 0);
+}
+mwl-gauge > .gauge > .value-text {
+  fill: #543526;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}

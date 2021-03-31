@@ -7,26 +7,38 @@
 
 <div class="d-flex" id="wrapper">
   <!-- Sidebar -->
-  <div class="sf-green-tepapa-bg border-right pt-5" id="sidebar-wrapper">
+  <div class="sf-green-tepapa-bg border-right pt-4" id="sidebar-wrapper">
     <!-- <div class="sidebar-heading text-white">head </div> -->
+    <div class="text-center mb-3" style="    border-bottom: 2px solid #fff;
+    padding-bottom: 1em;
+    margin: 1.5em;
+    margin-top: 0;">
+      <img src="../assets/images/KKU.png" alt="KKU" style="width: 60px;">
+    </div>
     <div class="list-group list-group-flush">
       <a class="list-group-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
         routerLink="/pages/home">
         <i class="fa fa-home"></i> Home </a>
       <a class="list-group-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
         routerLink="/pages/dashboard">
-        <i class="fa"><mat-icon>dashboard</mat-icon></i>
+        <i class="fa">
+          <mat-icon>dashboard</mat-icon>
+        </i>
         Dashboard </a>
       <a class="list-group-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
         routerLink="/pages/mainFarm" [queryParams]="{ id: 'Farms', type:'FarmKKU'}">
-        <i class="fa"><mat-icon>local_florist</mat-icon></i>
+        <i class="fa">
+          <mat-icon>local_florist</mat-icon>
+        </i>
         Farms
       </a>
       <!-- <a class="list-group-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" href="#">
         <i class="fa fa-seedling"></i> Plants </a> -->
       <a class="list-group-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
         routerLink="/pages/mainWT" [queryParams]="{ id: 'Weather Stations', type:'WeatherForecast'}">
-        <i class="fa"><mat-icon>wb_sunny</mat-icon></i>
+        <i class="fa">
+          <mat-icon>wb_sunny</mat-icon>
+        </i>
         <!-- <i class="fa fa-sun"></i>  -->
         Weather Stations </a>
       <!-- <a class="list-group-item" href="#">

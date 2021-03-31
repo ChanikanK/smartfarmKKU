@@ -27,8 +27,8 @@ export class SensorComponent implements OnInit {
   aggrMethiod: string = 'max';
   aggrPeriod: string = 'hour';
   // set default time for testing
-  dateFrom: string = "2021-02-08T00:00:00.000Z";
-  dateTo: string = "2021-02-08T23:59:59.999Z";
+  dateFrom: string = '2021-02-08T00:00:00.000Z';
+  dateTo: string = '2021-02-08T23:59:59.999Z';
   shortTerm: contextResponsesModel[] = [];
   attrPart: Array<any> = [];
   dateTime!: Date;
@@ -96,7 +96,7 @@ export class SensorComponent implements OnInit {
           // sensorAttr.data.value = Number(sensorAttr.data.value)
           // sensorAttr.data.metadata.ranges.value.max = Number(sensorAttr.data.metadata.ranges.value.max)
           // sensorAttr.data.metadata.ranges.value.min = Number(sensorAttr.data.metadata.ranges.value.min)
-        // console.log("🚀 this.neededArray", this.neededArray)
+          // console.log("🚀 this.neededArray", this.neededArray)
           this.attr = sensorAttr.name;
           this.markerService
             .getShortTerm(
