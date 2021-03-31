@@ -40,6 +40,12 @@ export class MarkerService {
     });
   }
 
+
+  getWTByID(id: string): Observable<SensorModel[]> {
+
+    return this.http.get<SensorModel[]>(this.farmStation+"?id="+id,);
+  }
+
   // getFarmName(farmID: string) {
   //   // this.getFarms().subscribe;
   //   return this.http.get<FarmModel[]>(this.farmStation);

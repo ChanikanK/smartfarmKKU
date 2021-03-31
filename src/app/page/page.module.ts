@@ -30,6 +30,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { SettingDeviceComponent } from './setting-device/setting-device.component';
 import { StationModule } from './sf-station/station.module';
 import { SettingDeviceModule } from './setting-device/setting-device.module';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { SettingDeviceModule } from './setting-device/setting-device.module';
     MatAutocompleteModule,
     ReactiveFormsModule,
     // MatDatepickerModule,
-    SettingDeviceModule
+    SettingDeviceModule,
+    MatIconModule
   ],
 })
 export class PageModule {}

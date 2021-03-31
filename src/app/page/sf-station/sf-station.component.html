@@ -34,9 +34,17 @@
   </div> -->
 
   <!-- Content Row -->
-  <div class="row">
+  <div class="row" *ngIf="type != 'WeatherForecast'">
     <div class="col-12" *ngFor="let sensor of sensors; let i = index">
       <app-sensor *ngIf="sensor.mounting_point_name" [sensor]="sensor"></app-sensor>
+    </div>
+  </div>
+
+
+
+  <div class="row" *ngIf="type == 'WeatherForecast'">
+    <div class="col-12" *ngFor="let sensor of sensors; let i = index">
+      <app-sensor  [sensor]="sensor"></app-sensor>
     </div>
   </div>
 </div>

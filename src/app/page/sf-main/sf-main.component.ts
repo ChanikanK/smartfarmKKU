@@ -47,6 +47,6 @@ export class SfMainComponent implements OnInit {
   }
 
   clickStation(name: string) {
-    this.router.navigateByUrl('/pages/station?id=' + name);
+    this.router.navigateByUrl('/pages/station?id=' + name+'&type='+this.type);
   }
 }

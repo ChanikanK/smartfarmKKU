@@ -23,6 +23,7 @@ export class SensorComponent implements OnInit {
 
   idPart!: string;
   type!: string;
+  stationType!: string;
   attr!: string;
   aggrMethiod: string = 'max';
   aggrPeriod: string = 'hour';
@@ -44,32 +45,40 @@ export class SensorComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //debugger;
+      this.route.queryParams.subscribe((params) => {
+      this.id = params['id'];
+      this.stationType = params['type'];
+      this.idPart = this.sensor.id;
+      this.type = this.sensor.type;
     // Step 1. Get all the object keys.
     let sensorProperties = Object.keys(this.sensor);
 
     // Step 2. Create an empty array.
     this.neededArray = [];
-
     // Step 3. Iterate throw all keys.
     let i = 0;
     for (let prop of sensorProperties) {
+     const propCheck = prop.toLowerCase();
       if (
-        prop != 'id' &&
-        prop != 'type' &&
-        prop != 'mounting_point' &&
-        prop != 'mounting_point_name' &&
-        prop != 'refStore' &&
-        prop != 'external' &&
-        prop != 'MAC' &&
-        prop != 'TimeInstant' &&
-        prop != 'WindOut' &&
-        prop != 'WindTemp'
+        propCheck != 'id' &&
+        propCheck != 'type' &&
+        propCheck != 'mounting_point' &&
+        propCheck != 'mounting_point_name' &&
+        propCheck != 'refstore' &&
+        propCheck != 'external' &&
+        propCheck != 'mac' &&
+        propCheck != 'timeinstant' &&
+        propCheck != 'windout' &&
+        propCheck != 'windtemp'&&
+        propCheck != 'info'&&
+        propCheck != 'name'
       ) {
         const sensorRP = new SensorRePackModel();
         sensorRP.name = prop;
         sensorRP.data = Object.values(this.sensor)[i];
         // sensorRP.data.value = Number(sensorRP.data.value)
-        // console.log("🚀  sensorRP.data", sensorRP.data.value)
+        console.log("🚀  sensorRP.data", sensorRP.data.value)
         this.neededArray.push(sensorRP);
       }
       i++;
@@ -79,10 +88,7 @@ export class SensorComponent implements OnInit {
     let yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
 
     // ********** Short term **********
-    this.route.queryParams.subscribe((params) => {
-      this.id = params['id'];
-      this.idPart = this.sensor.id;
-      this.type = this.sensor.type;
+
       this.dateFrom = yesterday.toISOString();
       this.dateTo = dateTimeNow.toISOString();
 
@@ -92,6 +98,9 @@ export class SensorComponent implements OnInit {
           sensorAttr.data.value != null &&
           sensorAttr.data.value.toString().trim() != ''
         ) {
+        console.log("🚀 ~ file: sensor.component.ts ~ line 95 ~ SensorComponent ~ ngOnInit ~ this.neededArray", this.neededArray)
+        console.log("🚀 ~ file: sensor.component.ts ~ line 95 ~ SensorComponent ~ ngOnInit ~ this.neededArray", this.neededArray)
+        console.log("🚀 ~ file: sensor.component.ts ~ line 95 ~ SensorComponent ~ ngOnInit ~ this.neededArray", this.neededArray)
           // convert type of data.value for using in the gauges
           // sensorAttr.data.value = Number(sensorAttr.data.value)
           // sensorAttr.data.metadata.ranges.value.max = Number(sensorAttr.data.metadata.ranges.value.max)

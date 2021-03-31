@@ -22,6 +22,7 @@ interface TimeRange {
 export class SfStationComponent implements OnInit {
   pageTitle = 'Station';
   id!: string;
+  type!: string;
   sensors: SensorModel[] = [];
   farms!: FarmModel[];
   timeRange: TimeRange[] = [
@@ -37,15 +38,28 @@ export class SfStationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // debugger;
     this.route.queryParams.subscribe((params) => {
       this.id = params['id'];
+      this.type = params['type'];
       this.markerService.setFarmStation(environment.farmAPILink);
+      if(this.type != 'WeatherForecast'){
+        this.markerService
+          .getFarmByFiwareService(this.id)
+          .subscribe((res: SensorModel[]) => {
+            console.log('SensorModel: ', res);
+            this.sensors = res;
+          });
+
+      }else{
       this.markerService
-        .getFarmByFiwareService(this.id)
+        .getWTByID(this.id)
         .subscribe((res: SensorModel[]) => {
           console.log('SensorModel: ', res);
           this.sensors = res;
         });
+      }
+
       this.pageTitle = this.id;
 
       // just for calling the farm name. should be edit later.
@@ -60,6 +74,9 @@ export class SfStationComponent implements OnInit {
         }
       });
     });
+
+
+
   }
 
   backClicked() {
