@@ -11,7 +11,7 @@
       <li class="nav-item col p-0">
         <a class="nav-link active" data-toggle="tab" href="#sensors">
           <span class="circle-20 sf-green-tepapa-light-bg mr-2">1</span>
-          Sonsors</a>
+          Sensors</a>
       </li>
       <li class="nav-item col p-0">
         <a class="nav-link" data-toggle="tab" href="#device">
@@ -31,7 +31,8 @@
         <div class="d-flex justify-content-between">
           <h2>All Sensors</h2>
           <div>
-            <button type="button" class="btn mx-2 btn-primary">Add sensor</button>
+            <!-- <button type="button" class="btn mx-2 btn-primary">Add sensor</button> -->
+            <app-dialog-sensor></app-dialog-sensor>
           </div>
         </div>
         <table class="table">
@@ -70,35 +71,7 @@
             </tr>
           </tbody>
         </table>
-        <form>
-          <h2 class="text-center">Add sensor</h2>
-          <div class="form-group">
-            <label for="">Sensors Name:</label>
-            <input type="text" class="form-control" id="" placeholder="">
-          </div>
-          <div class="form-group">
-            <label for="">ชื่อเซนเซอร์ภาษาไทย:</label>
-            <input type="text" class="form-control" id="" placeholder="">
-          </div>
-          <div class="form-group">
-            <label for="">Data type:</label>
-            <select class="form-control">
-              <option value="float">float</option>
-              <option value="int">int</option>
-              <option value="bool">bool</option>
-              <option value="string">string</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="">Min:</label>
-            <input type="text" class="form-control" id="" placeholder="">
-          </div>
-          <div class="form-group">
-            <label for="">Max:</label>
-            <input type="text" class="form-control" id="" placeholder="">
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+
       </div>
       <div class="tab-pane container p-5" id="device">
         <div class="d-flex justify-content-between">
@@ -137,14 +110,13 @@
             </tr>
           </tbody>
         </table>
-        <p class="text-danger">** move it to The "Create template" dialog **</p>
-        <!-- <app-dual-listbox></app-dual-listbox> -->
       </div>
       <div class="tab-pane container p-5" id="service">
         <div class="d-flex justify-content-between">
           <h2>Your services</h2>
           <div>
-            <button type="button" class="btn mx-2 btn-primary">Create service</button>
+            <!-- <button type="button" class="btn mx-2 btn-primary">Create service</button> -->
+            <app-dialog-service></app-dialog-service>
           </div>
         </div>
         <table class="table">

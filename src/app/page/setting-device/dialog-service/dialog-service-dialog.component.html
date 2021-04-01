@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>{{dialogTitle}}</h1>
+<div mat-dialog-content>
+  <form>
+    <div class="form-group">
+      <label for="">Service Name:</label>
+      <input type="text" class="form-control" id="" placeholder="">
+    </div>
+    <div class="text-center">
+      <button class="btn btn-info">Add template</button>
+    </div>
+    <div class="p-2 my-2" style="background-color: #F5F5F5;">
+      <div class="form-group">
+        <label for="">Device template:</label>
+        <select class="form-control">
+          <option value="">device 1</option>
+          <option value="">device 2</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="">Entity name:</label>
+        <input type="text" class="form-control" id="" placeholder="" value="ngnsi-device1:001" disabled>
+      </div>
+      <div class="form-group">
+        <label for="">Device ID:</label>
+        <input type="text" class="form-control" id="" placeholder="" value="device1:001" disabled>
+      </div>
+      <div class="text-right">
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+    <div class="text-right">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
