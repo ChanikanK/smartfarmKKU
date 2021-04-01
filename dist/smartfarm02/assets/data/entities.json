@@ -1,0 +1,209 @@
+[
+  {
+      "id": "urn:ngsi-ld:Number1",
+      "type": "SensorWifi",
+      "Ammonia": {
+          "type": "Float",
+          "value": "0.01",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.684Z"
+              }
+          }
+      },
+      "Humidity": {
+          "type": "Float",
+          "value": "90.90",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.684Z"
+              }
+          }
+      },
+      "Light": {
+          "type": "Float",
+          "value": "14.00",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.684Z"
+              }
+          }
+      },
+      "Temperature": {
+          "type": "Float",
+          "value": "22.00",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.684Z"
+              }
+          }
+      },
+      "TimeInstant": {
+          "type": "ISO8601",
+          "value": "2021-02-10T04:12:18.00Z",
+          "metadata": {}
+      },
+      "WindSpeed": {
+          "type": "Float",
+          "value": "174.24",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.684Z"
+              }
+          }
+      },
+      "refStore": {
+          "type": "Relationship",
+          "value": "urn:ngsi-ld:ChickenFarmStore:001",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.684Z"
+              }
+          }
+      }
+  },
+  {
+      "id": "urn:ngsi-ld:Number2",
+      "type": "SensorWifi",
+      "Ammonia": {
+          "type": "Float",
+          "value": "0.01",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.685Z"
+              }
+          }
+      },
+      "Humidity": {
+          "type": "Float",
+          "value": "69.90",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.685Z"
+              }
+          }
+      },
+      "Light": {
+          "type": "Float",
+          "value": "11.00",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.685Z"
+              }
+          }
+      },
+      "Temperature": {
+          "type": "Float",
+          "value": "24.90",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.685Z"
+              }
+          }
+      },
+      "TimeInstant": {
+          "type": "ISO8601",
+          "value": "2021-02-10T04:12:18.00Z",
+          "metadata": {}
+      },
+      "WindSpeed": {
+          "type": "Float",
+          "value": "219.78",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.685Z"
+              }
+          }
+      },
+      "refStore": {
+          "type": "Relationship",
+          "value": "urn:ngsi-ld:ChickenFarmStore:001",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.685Z"
+              }
+          }
+      }
+  },
+  {
+      "id": "urn:ngsi-ld:Number3",
+      "type": "SensorWifi",
+      "Ammonia": {
+          "type": "Float",
+          "value": "0.00",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.684Z"
+              }
+          }
+      },
+      "Humidity": {
+          "type": "Float",
+          "value": "99.90",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.684Z"
+              }
+          }
+      },
+      "Light": {
+          "type": "Float",
+          "value": "0.00",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.684Z"
+              }
+          }
+      },
+      "Temperature": {
+          "type": "Float",
+          "value": "22.40",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.684Z"
+              }
+          }
+      },
+      "TimeInstant": {
+          "type": "ISO8601",
+          "value": "2021-02-10T04:12:18.00Z",
+          "metadata": {}
+      },
+      "WindSpeed": {
+          "type": "Float",
+          "value": "0.00",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.684Z"
+              }
+          }
+      },
+      "refStore": {
+          "type": "Relationship",
+          "value": "urn:ngsi-ld:ChickenFarmStore:001",
+          "metadata": {
+              "TimeInstant": {
+                  "type": "ISO8601",
+                  "value": "2021-02-10T04:12:18.684Z"
+              }
+          }
+      }
+  }
+]

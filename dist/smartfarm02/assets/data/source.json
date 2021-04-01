@@ -1,0 +1,26 @@
+[
+  {
+    "_id": 1,
+    "name": "Pawn"
+  },
+  {
+    "_id": 2,
+    "name": "Rook"
+  },
+  {
+    "_id": 3,
+    "name": "Knight"
+  },
+  {
+    "_id": 4,
+    "name": "Bishop"
+  },
+  {
+    "_id": 5,
+    "name": "Queen"
+  },
+  {
+    "_id": 6,
+    "name": "King"
+  }
+]
