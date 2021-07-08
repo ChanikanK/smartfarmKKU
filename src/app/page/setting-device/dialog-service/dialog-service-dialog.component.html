@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>{{dialogTitle}}</h1>
+<!-- <h1 mat-dialog-title>{{dialogTitle}}</h1>
 <div mat-dialog-content>
   <form style="width: 40rem;">
     <div class="form-group">
@@ -32,4 +32,42 @@
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </form>
+</div> -->
+
+<h1 mat-dialog-title>{{dialogTitle}}</h1>
+<div mat-dialog-content>
+  <div style="width: 40rem;">
+    <div class="form-group">
+      <label for="">Farm ID<b style="color: red;">*</b></label>
+      <input type="text" class="form-control" [(ngModel)]="farm.farm_id" placeholder="ex: fa1, fa2 etc.">
+    </div>
+    <div class="form-group">
+      <label for="">Farm Name<b style="color: red;">*</b></label>
+      <input type="text" class="form-control" [(ngModel)]="farm.farm_name" placeholder="ex: Raimei farm etc.">
+    </div>
+    <div class="form-group">
+      <label for="">Owner Name<b style="color: red;">*</b></label>
+      <input type="text" class="form-control" [(ngModel)]="farm.owner" placeholder="ex: Ck Boa etc.">
+    </div>
+    <div class="form-group">
+      <label for="">Latitude<b style="color: red;">*</b></label>
+      <input type="number" class="form-control" [(ngModel)]="farm.lati" placeholder="ex: 38.8951 or -77.0364">
+    </div>
+    <div class="form-group">
+      <label for="">Longitude<b style="color: red;">*</b></label>
+      <input type="number" class="form-control" [(ngModel)]="farm.long" placeholder="ex: 38.8951 or -77.0364">
+    </div>
+    <div class="form-group">
+      <label for="">Note</label>
+      <input type="text" class="form-control" [(ngModel)]="farm.note" placeholder="write some text...">
+    </div>
+    <!-- <div class="form-group">
+      <label for="date">Time Assign:</label>
+      <input type="date" class="form-control" [(ngModel)]="farm.time" placeholder="">
+    </div> -->
+
+
+    <button type="submit" (click)="clickAddFarm()" class="btn btn-primary">Submit</button>
+  </div>
+  <!-- <app-dual-listbox></app-dual-listbox> -->
 </div>

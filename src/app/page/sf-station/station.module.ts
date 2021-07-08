@@ -13,7 +13,7 @@ import { LineChartTimeComponent } from './line-chart-time/line-chart-time.compon
 import { MatNativeDateModule } from '@angular/material/core';
 // import { SearchFarmComponent } from './search-farm/search-farm.component';
 import { MatSelectModule } from '@angular/material/select';
-
+import { NgxGaugeModule } from 'ngx-gauge';
 @NgModule({
   declarations: [
     SfStationComponent,
@@ -24,6 +24,7 @@ import { MatSelectModule } from '@angular/material/select';
     // SearchFarmComponent,
   ],
   imports: [
+    NgxGaugeModule,
     CommonModule,
     MatFormFieldModule,
     MatDatepickerModule,

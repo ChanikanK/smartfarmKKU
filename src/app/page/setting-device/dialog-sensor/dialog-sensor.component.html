@@ -1,1 +1,46 @@
-<button mat-button (click)="openDialog()" class="btn btn-primary">Add Sensor</button>
+<h1 mat-dialog-title>{{dialogTitle}}</h1>
+<div mat-dialog-content>
+  <div style="width: 40rem;">
+    <div class="form-group">
+      <label >Sensors ID<b style="color: red;">*</b></label>
+      <input type="text" class="form-control" [(ngModel)]="sensor.sensor_id" placeholder="ex: sensor1, sensor2, car1, temp1 etc.">
+    </div>
+    <div class="form-group">
+      <label>Sensors Name<b style="color: red;">*</b></label>
+      <input type="text" class="form-control" [(ngModel)]="sensor.sensor_name" placeholder="ex: Sensor 1, Sensor 2">
+    </div>
+    <div class="form-group">
+      <label>ชื่อเซ็นเซอร์ภาษาไทย<b style="color: red;">*</b></label>
+      <input type="text" class="form-control" [(ngModel)]="sensor.sensor_name_thai" placeholder="ex: อุณหภูมิ 1, ความชื้น 2">
+    </div>
+    <!-- <div class="form-group">
+      <label for="">ชื่อเซนเซอร์ภาษาไทย:</label>
+      <input type="text" class="form-control" id="" placeholder="">
+    </div> -->
+    <div class="form-group"  >
+      <label >Data type<b style="color: red;">*</b></label>
+      <select class="form-control"  [(ngModel)]="sensor.datatype">
+        <option value="Number">Number</option>
+        <option value="Integer">Integer</option>
+        <option value="Bool">Bool</option>
+        <option value="String">String</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label >Min<b style="color: red;">*</b></label>
+      <input type="number" class="form-control" [(ngModel)]="sensor.min" placeholder="Write a numbers">
+    </div>
+    <div class="form-group">
+      <label>Max<b style="color: red;">*</b></label>
+      <input type="number" class="form-control" [(ngModel)]="sensor.max"  placeholder="Write a numbers">
+    </div>
+    <div class="form-group">
+      <label >Unit</label>
+      <input type="text" class="form-control" [(ngModel)]="sensor.unit" placeholder="Write some unit....">
+    </div>
+    <button type="submit" (click)="clickAddSensor()" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+<!-- <button class="add-button" (click)="add(heroName.value); heroName.value=''">
+  Add hero
+</button> -->

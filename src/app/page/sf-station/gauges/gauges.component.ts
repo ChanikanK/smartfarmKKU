@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { NgCircleProgressModule } from 'ng-circle-progress';
 @Component({
   selector: 'app-gauges',
   templateUrl: './gauges.component.html',
@@ -14,6 +14,14 @@ export class GaugesComponent implements OnInit {
   @Input() inputMin: number = 0;
 
   constructor() {}
+  meter = "margin-inline: auto;";
+  thresholdConfig = {
+    '0': {color: '3EC0A8'}
+    // '40': {color: 'orange'},
+    // '75.5': {color: 'red'}
+};
+
+
 
   ngOnInit(): void {
     this.value = this.inputValue;

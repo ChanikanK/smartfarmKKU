@@ -1,4 +1,5 @@
 <div class="container-fluid">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
   <!-- Header -->
   <div class="d-flex justify-content-between pt-3 pb-2 mb-3 border-bottom">
     <!-- <div class="col-1 d-md-none"></div> -->
@@ -16,7 +17,7 @@
       <li class="nav-item col p-0">
         <a class="nav-link" data-toggle="tab" href="#device">
           <span class="circle-20 sf-green-tepapa-light-bg mr-2">2</span>
-          Device templates</a>
+          Entity templates</a>
       </li>
       <li class="nav-item col p-0">
         <a class="nav-link" data-toggle="tab" href="#service">
@@ -32,119 +33,186 @@
           <h2>All Sensors</h2>
           <div>
             <!-- <button type="button" class="btn mx-2 btn-primary">Add sensor</button> -->
-            <app-dialog-sensor></app-dialog-sensor>
+            <!-- <app-dialog-sensor></app-dialog-sensor> -->
+            <button mat-button (click)="openDialog1()" class="btn btn-primary">Add Sensor</button>
+
           </div>
         </div>
         <table class="table">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Name</th>
+              <th scope="col">Sensor Name</th>
+              <th scope="col">ชื่อเซ็นเซอร์ภาษาไทย</th>
               <th scope="col">Data types</th>
               <th scope="col">Min</th>
               <th scope="col">Max</th>
-              <th scope="col"></th>
+              <th scope="col">Unit</th>
+              <th scope="col">Time assign</th>
+              <th class="text-center"scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>sensor 1 - from system</td>
-              <td>float</td>
-              <td>0</td>
-              <td>100</td>
-              <td>
-                <!-- <button type="button" class="btn btn-sm mx-2 btn-warning">Edit</button>
-                <button type="button" class="btn btn-sm mx-2 btn-danger">Delete</button> -->
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>sensor 2 - from add</td>
-              <td>float</td>
-              <td>0</td>
-              <td>100</td>
-              <td>
-                <button type="button" class="btn btn-sm mx-2 btn-warning">Edit</button>
-                <button type="button" class="btn btn-sm mx-2 btn-danger">Delete</button>
+            <tr *ngFor="let sensor of sensors">
+              <td class="count"></td>
+              <td>{{sensor.sensor_name}}</td>
+              <td>{{sensor.sensor_name_thai}}</td>
+              <td>{{sensor.datatype}}</td>
+              <td>{{sensor.min}}</td>
+              <td>{{sensor.max}}</td>
+              <td>{{sensor.unit}}</td>
+              <td>{{sensor.time}}</td>
+              <td class="text-center">
+                <button type="button" class="btn btn-sm mx-2 btn-warning" (click)="editSensor(sensor)">Edit</button>
+                <button type="button" class="btn btn-sm mx-2 btn-danger" (click)="deleteSensor(sensor)">Delete</button>
               </td>
             </tr>
           </tbody>
         </table>
-
       </div>
+      <!-- ----------------------------------------------------table2----------------------------------------- -->
       <div class="tab-pane container p-5" id="device">
         <div class="d-flex justify-content-between">
-          <h2>Your templates</h2>
+          <h2>Entity Template</h2>
           <div>
-            <app-dialog-device></app-dialog-device>
+            <button mat-button (click)="openDialog2()" class="btn btn-primary">Add Entity Template</button>
           </div>
         </div>
         <table class="table">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Type</th>
-              <th scope="col"></th>
+              <th scope="col">Entity Template Name</th>
+              <!-- <th scope="col">Sensor Name</th> -->
+              <th scope="col">Time assign</th>
+              <th class="text-center" scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Template 1</td>
-              <td>Type 1</td>
-              <td>
-                <button type="button" class="btn btn-sm mx-2 btn-warning">Edit</button>
-                <button type="button" class="btn btn-sm mx-2 btn-danger">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Template 1</td>
-              <td>Type 2</td>
-              <td>
-                <button type="button" class="btn btn-sm mx-2 btn-warning">Edit</button>
-                <button type="button" class="btn btn-sm mx-2 btn-danger">Delete</button>
+            <tr *ngFor="let entity_template of entity_templates">
+              <td class="count"></td>
+              <td>{{entity_template.temp_name}}</td>
+              <td>{{entity_template.time}}</td>
+              <!-- <td>Sensor 1, Sensor 2</td> -->
+
+              <td class="text-center ">
+                <button type="button" class="btn btn-sm mx-2 btn-info" (click)="openDialogShowSensor(entity_template)">Details</button>
+                <button type="button" class="btn btn-sm mx-2 btn-secondary" (click)="openDialogAddSensor(entity_template)">Add Sensor</button>
+                <button type="button" class="btn btn-sm mx-2 btn-warning" (click)="editEntityTemplate(entity_template)">Edit</button>
+                <button type="button" class="btn btn-sm mx-2 btn-danger" (click)="deleteEntityTemplate(entity_template)">Delete</button>
               </td>
             </tr>
           </tbody>
         </table>
+        <br><br>
+        <!-- --------------------------------------table3--------------------------------------- -->
+        <div class="d-flex justify-content-between">
+          <h2>Entity</h2>
+          <div>
+            <!-- <app-dialog-device2></app-dialog-device2> -->
+            <button mat-button (click)="openDialog3()" class="btn btn-primary">Add Entity</button>
+          </div>
+        </div>
+        <table class="table ">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Entity Name</th>
+              <th scope="col">Template Name</th>
+              <th scope="col">Time assign</th>
+              <!-- <th scope="col">Template Name</th> -->
+              <th class="text-center" scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let entity of entities">
+              <td class="count"></td>
+              <td>{{entity.entity_name}}</td>
+              <td>{{entity.temp_name}}</td>
+              <td>{{entity.time}}</td>
+              <!-- <td>Tempurature node plant 1,Tempurature node plant 2 </td> -->
+              <td class="text-center ">
+                <button type="button" class="btn btn-sm mx-2 btn-warning" (click)="editEntity(entity)">Edit</button>
+                <button type="button" class="btn btn-sm mx-2 btn-danger" (click)="deleteEntity(entity)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- <app-dual-listbox></app-dual-listbox> -->
       </div>
+
+      <!-- -----------------------------------------table4------------------------------------- -->
       <div class="tab-pane container p-5" id="service">
         <div class="d-flex justify-content-between">
-          <h2>Your services</h2>
+          <h2>Farm</h2>
           <div>
             <!-- <button type="button" class="btn mx-2 btn-primary">Create service</button> -->
-            <app-dialog-service></app-dialog-service>
+            <!-- <app-dialog-service></app-dialog-service> -->
+            <button mat-button (click)="openDialog4()" class="btn btn-primary">Add Farm</button>
           </div>
         </div>
         <table class="table">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Type</th>
-              <th scope="col"></th>
+              <th scope="col">Farm Name</th><!--  (This is a service.) -->
+              <th scope="col">Owner</th>
+              <th scope="col">Latitude</th>
+              <th scope="col">Longitude</th>
+              <th scope="col">Unit</th>
+              <th scope="col">Time assign</th>
+              <th class="text-center" scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>service 1</td>
-              <td>Type 1</td>
-              <td>
-                <button type="button" class="btn btn-sm mx-2 btn-warning">Edit</button>
-                <button type="button" class="btn btn-sm mx-2 btn-danger">Delete</button>
+            <tr *ngFor="let farm of farms">
+              <td class="count"></td>
+              <td>{{farm.farm_name}}</td>
+              <td>{{farm.owner}}</td>
+              <td>{{farm.lati}}</td>
+              <td>{{farm.long}}</td>
+              <td>{{farm.note}}</td>
+              <td>{{farm.time}}</td>
+              <td class="text-center">
+                <button type="button" class="btn btn-sm mx-2 btn-warning" (click)="editFarm(farm)">Edit</button>
+                <button type="button" class="btn btn-sm mx-2 btn-danger" (click)="deleteFarm(farm)">Delete</button>
               </td>
             </tr>
+          </tbody>
+        </table>
+        <br><br>
+<!-- ----------------------------------------table5-------------------------------------------- -->
+        <div class="d-flex justify-content-between">
+          <h2>Farm Entity Table</h2>
+          <div>
+            <!-- <button type="button" class="btn mx-2 btn-primary">Create service</button> -->
+            <!-- <app-dialog-service2></app-dialog-service2> -->
+            <button mat-button (click)="openDialog5()" class="btn btn-primary">Create Farm Entity</button>
+          </div>
+        </div>
+        <table class="table">
+          <thead>
             <tr>
-              <th scope="row">2</th>
-              <td>service 2</td>
-              <td>Type 2</td>
-              <td>
-                <button type="button" class="btn btn-sm mx-2 btn-warning">Edit</button>
-                <button type="button" class="btn btn-sm mx-2 btn-danger">Delete</button>
+              <th scope="col">#</th>
+              <th scope="col">Farm Name</th><!--  (This is a service.) -->
+              <th scope="col">Entity</th>
+              <th scope="col">Note</th>
+              <th scope="col">Install</th>
+              <th scope="col">Time assign</th>
+              <th class="text-center" scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let farm_entity of farms_entities">
+              <td class="count"></td>
+              <td>{{farm_entity.farm_name}}</td>
+              <td>{{farm_entity.entity_name}}</td>
+              <td>{{farm_entity.note}}</td>
+              <td>{{farm_entity.install}}</td>
+              <td>{{farm_entity.time}}</td>
+              <td class="text-center">
+                <button type="button" class="btn btn-sm mx-2 btn-warning" (click)="editFarmEntity(farm_entity)">Edit</button>
+                <button type="button" class="btn btn-sm mx-2 btn-danger" (click)="deleteFarmEntity(farm_entity)">Delete</button>
               </td>
             </tr>
           </tbody>
@@ -153,3 +221,14 @@
     </div>
   </div>
 </div>
+<!-- for count number -->
+<style>
+  table {
+  counter-reset: section;
+}
+
+.count:before {
+  counter-increment: section;
+  content: counter(section);
+}
+</style>

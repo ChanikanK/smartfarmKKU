@@ -1,21 +1,25 @@
 <h1 mat-dialog-title>{{dialogTitle}}</h1>
 <div mat-dialog-content>
   <div style="width: 40rem;">
-    <div class="form-group">
-      <label>Template ID <b style="color: red;">*</b></label>
+    <!-- <div class="form-group">
+      <label>Template ID:</label>
       <input type="text" class="form-control" [(ngModel)]="entity_template.temp_id" placeholder="ex: tempurt_node1, carb_node1, oxy_node1, nitro_node1 etc.">
     </div>
     <div class="form-group">
-      <label >Template Name<b style="color: red;">*</b></label>
+      <label >Template Name:</label>
       <input type="text" class="form-control" [(ngModel)]="entity_template.temp_name" placeholder="ex: Tempurature node plant 1, Carbon node plant 1">
-    </div>
-    <!-- <div class="form-group">
-      <label>Sensor name:</label><br>
-      <input type="checkbox" [(ngModel)]="entity_template.sensor_name" [ngModelOptions]="{standalone: true}">
-          <label ></label><br>
     </div> -->
+    <div>
+      <ng-container *ngFor="let item of sensors">
 
-    <button type="submit" (click)="clickAddEntityTemplate()" class="btn btn-primary">Submit</button>
+      <p *ngIf="item.isChecked" style="font-size: medium;">&#9899;
+        {{item.sensor_name}}
+      </p>
+      </ng-container>
+
+    </div>
+
+    <button type="submit" (click)="closeSensor()" class="btn btn-dark">Close</button>
   </div>
   <!-- <app-dual-listbox></app-dual-listbox> -->
 </div>

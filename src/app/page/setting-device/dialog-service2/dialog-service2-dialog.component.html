@@ -1,0 +1,55 @@
+<h1 mat-dialog-title>{{dialogTitle}}</h1>
+<div mat-dialog-content>
+  <div style="width: 40rem;">
+    <!-- <div class="form-group">
+      <label for="">Farm Name:</label>
+      <input type="text" class="form-control" [(ngModel)]="farm_entity.farm_name" placeholder="ex: Raimei farm">
+    </div> -->
+
+    <div class="form-group"  >
+      <label >Farm Name<b style="color: red;">*</b></label>
+      <select class="form-control"  [(ngModel)]="farm_entity.farm_id" >
+        <option  *ngFor="let farm of farms" value="{{farm.farm_id}}">{{farm.farm_name}}</option>
+      </select>
+    </div>
+
+    <div class="form-group"  >
+      <label >Entity Name<b style="color: red;">*</b></label>
+      <select class="form-control"  [(ngModel)]="farm_entity.entity_id" >
+        <option  *ngFor="let entity of entitiess" value="{{entity.entity_id}}">{{entity.entity_name}}</option>
+      </select>
+    </div>
+<!--
+    <div class="form-group"  >
+      <label >Entity Name:</label>
+      <select class="form-control"  [(ngModel)]="farm_entity.farm_id" >
+        <option  *ngFor="let farm of farms_entities" value="{{farm.farm_id}}">{{farm.farm_name}}</option>
+      </select>
+    </div> -->
+    <!-- <div class="form-group">
+      <label for="">Entity Name:</label><br>
+      <input type="checkbox" id="" name="Tempurature node" value="">
+        <label for="tempurature">Tempurature node</label><br>
+      <input type="checkbox" id="" name="Carbon node" value="">
+        <label for="carbon">Carbon node</label><br>
+      <input type="checkbox" id="" name="Nitrogen node" value="">
+        <label for="nitrogen">Nitrogen node</label><br>
+      <input type="checkbox" id="" name="Phosphorus node" value="">
+        <label for="phosphorus">Phosphorus node</label><br>
+      <input type="text" class="form-control" id="" placeholder="ex: Carbon node, Tempurature node">
+    </div> -->
+    <div class="form-group">
+      <label for="">Note:</label>
+      <input type="text" class="form-control" [(ngModel)]="farm_entity.note" placeholder="Write some text...">
+    </div>
+    <div class="form-group">
+      <label for="">Install<b style="color: red;">*</b></label>
+      <select class="form-control" [(ngModel)]="farm_entity.install">
+        <option value="In-Door">In-door</option>
+        <option value="Out-Door">Out-door</option>
+      </select>
+    </div>
+    <button type="submit" (click)="clickAddFarmEntity()" class="btn btn-primary">Submit</button>
+  </div>
+  <!-- <app-dual-listbox></app-dual-listbox> -->
+</div>

@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MarkerService } from './services/marker.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
-
+import { NgxGaugeModule } from 'ngx-gauge';
 @NgModule({
   declarations: [AppComponent, SidebarComponent],
   imports: [
@@ -21,7 +21,8 @@ import {MatIconModule} from '@angular/material/icon';
     LeafletModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    NgxGaugeModule,
   ],
   providers: [MarkerService],
   bootstrap: [AppComponent],

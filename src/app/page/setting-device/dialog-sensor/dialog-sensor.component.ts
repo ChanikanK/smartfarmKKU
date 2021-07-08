@@ -1,5 +1,7 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { SensorModelNew } from 'src/app/models/farm-model';
+import { MarkerService } from 'src/app/services/marker.service';
 
 export interface DialogData {
   animal: 'panda' | 'unicorn' | 'lion';
@@ -10,24 +12,35 @@ export interface DialogData {
   styleUrls: ['./dialog-sensor.component.scss'],
 })
 export class DialogSensorComponent {
-  constructor(public dialog: MatDialog) {}
-
-  openDialog() {
-    this.dialog.open(DialogSensorComponentDialog, {
-      data: {
-        animal: 'panda',
-      },
-    });
-  }
-}
-
-@Component({
-  selector: 'app-dialog-sensor',
-  templateUrl: './dialog-sensor-dialog.component.html',
-  styleUrls: ['./dialog-sensor.component.scss'],
-})
-
-export class DialogSensorComponentDialog {
   dialogTitle: string = 'Add Sensor';
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  sensor!: SensorModelNew;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any,
+  public dialogRefSensor: MatDialogRef<DialogSensorComponent>,
+  private markerService: MarkerService) {}
+  ngOnInit() {
+    // will log the entire data object
+    this.dialogTitle = this.data.title;
+    if(this.dialogTitle == "Add Sensor"){
+      this.sensor = new SensorModelNew();this.sensor.id = 0;
+    } else {
+      this.sensor = this.data.sensor;
+    }
+    console.log(this.data)
+  }
+  clickAddSensor(){
+    if(this.sensor.id == 0){
+
+    this.markerService.addSensor(this.sensor).subscribe(res => {
+
+    this.dialogRefSensor.close('');
+      console.log(res);
+    });
+
+  }else{
+    this.markerService.editSensor(this.sensor).subscribe(res => {
+      this.dialogRefSensor.close('');
+        console.log(res);
+      });
+  }
+  }
 }

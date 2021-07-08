@@ -20,7 +20,8 @@ export class LineChartTimeComponent implements OnInit {
 
   colours: any = [
     {
-      backgroundColor:' rgba(140,204,12,0.6)',
+      backgroundColor:' rgba(116, 196, 215 )',
+
     },
   ];
   lineChartData: any = [

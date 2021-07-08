@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>{{dialogTitle}}</h1>
+<div mat-dialog-content>
+  <div style="width: 40rem;">
+    <div class="form-group">
+      <label>Entity ID<b style="color: red;">*</b></label>
+      <input type="text" class="form-control" [(ngModel)]="entity.entity_id" placeholder="ex: ent1, ent2">
+    </div>
+    <div class="form-group">
+      <label>Entity Name<b style="color: red;">*</b></label>
+      <input type="text" class="form-control" [(ngModel)]="entity.entity_name" placeholder="ex: Carbon node, Tempurature node">
+    </div>
+
+    <div class="form-group"  >
+      <label >Template Name<b style="color: red;">*</b></label>
+      <select class="form-control"  [(ngModel)]="entity.temp_id" >
+        <option  *ngFor="let temp of entity_templates" value="{{temp.temp_id}}">{{temp.temp_name}}</option>
+      </select>
+    </div>
+    <!-- <div class="form-group">
+      <label>Template Name:</label><br>
+      <input type="text" class="form-control" [(ngModel)]="entity.temp_id" value="" placeholder="ex: Tempurature node plant 1, Carbon node plant 1">
+    </div> -->
+
+    <button type="submit" (click)="clickAddEntity()" class="btn btn-primary">Submit</button>
+  </div>
+  <!-- <app-dual-listbox></app-dual-listbox> -->
+</div>

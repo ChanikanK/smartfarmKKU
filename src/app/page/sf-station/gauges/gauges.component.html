@@ -1,3 +1,39 @@
-<mwl-gauge [max]="max" [min]="min"  [value]="value" [animated]="true"
+<ngx-gauge [max]="max" [min]="min"  [value]="value" [thick] = 20  cap="round" [size] = 200
+backgroundColor = "#B2E5DC" style="margin-inline: auto;" foregroundColor = "#3EC0A8"
+>
+</ngx-gauge>
+<!-- [foregroundColor]="gaugeForegroundColor" -->
+<!-- <mwl-gauge [max]="max" [min]="min"  [value]="value" [animated]="true"
   [animationDuration]="1">
 </mwl-gauge>
+ -->
+
+<!-- <div id = "myDiv"></div>
+
+<script>
+var data = [
+  {
+    domain: { x: [0, 1], y: [0, 1] },
+    [value]:"value",
+    title: { text: "Speed" },
+    type: "indicator",
+    mode: "gauge+number+delta",
+    delta: { reference: 380 },
+    gauge: {
+      axis: { range: [null, 500] },
+      steps: [
+        { range: [min]="min", color: "lightgray" },
+        { range: [max]="max", color: "gray" }
+      ],
+      threshold: {
+        line: { color: "red", width: 4 },
+        thickness: 0.75,
+        value: [value]="value"
+      }
+    }
+  }
+];
+
+var layout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
+Plotly.newPlot('myDiv', data, layout);
+</script> -->
